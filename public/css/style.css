@@ -12,6 +12,19 @@
     margin-top: 4rem;
 }
 .adjust-profile-pic{
-    height:15rem;
-    width:17rem;
+    height:16rem;
+    width:19rem;
+}
+.social-media-links a{
+    display: block;
+	width:45px;
+	height:45px;
+    color: black;
+	font-size:35px;
+	/* To make icon display on middle*/
+	display:flex;
+	justify-content:center;
+	align-items: center;
+	text-decoration: none;
+	margin-left: 10px;
 }

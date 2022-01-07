@@ -29,8 +29,9 @@
 	margin-left: 10px;
 }
 .project-search-bar {
-	width: 25%;
+	width: 65%;
 	position: relative;
+	margin-left: 3rem;
 }
 .project-search-bar label {
 	position: absolute;
@@ -45,5 +46,11 @@
 	outline: none;
 	border: 1px solid #e5e5e5;
 	font-size: 16px;
-	box-sizing: border-box;
+	box-sizing: border-box;;
+}
+.project-page-heading{
+	margin-right: 0.5rem;
+}
+.smile-face{
+	font-size: 35px;
 }

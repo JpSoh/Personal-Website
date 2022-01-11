@@ -15,6 +15,17 @@
     height:16rem;
     width:19rem;
 }
+@media(max-width:700px){
+	.adjust-profile-pic{
+		height:11rem;
+		width:14rem;
+	}
+	.about-me-main{
+		flex-direction: column-reverse;
+	}
+	
+}
+
 .social-media-links a{
     display: block;
 	width:45px;

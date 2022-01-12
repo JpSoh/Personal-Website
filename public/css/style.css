@@ -15,15 +15,9 @@
     height:16rem;
     width:19rem;
 }
-@media(max-width:700px){
-	.adjust-profile-pic{
-		height:11rem;
-		width:14rem;
-	}
-	.about-me-main{
-		flex-direction: column-reverse;
-	}
-	
+
+.social-media-links{
+	justify-content: space-around;
 }
 
 .social-media-links a{
@@ -64,4 +58,30 @@
 }
 .smile-face{
 	font-size: 35px;
+}
+@media(max-width:700px){
+	.adjust-profile-pic{
+		height:11rem;
+		width:14rem;
+	}
+	.adjust-main{
+		flex-direction: column-reverse;
+	}
+	.about-me-main{
+		margin-bottom: 4rem;
+	}
+	.about-page-right-side{
+		margin-bottom: 1rem;
+	}
+	.profile-photo{
+		display: flex;
+		justify-content: center;
+	}
+	.about-me-details{
+		width: 98%;
+	}
+	.about-me-footer{
+		position: static;
+	}
+	
 }

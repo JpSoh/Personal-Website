@@ -33,6 +33,9 @@
 	text-decoration: none;
 	margin-left: 10px;
 }
+.project{
+	max-width: 470px;
+}
 .project-search-bar {
 	width: 65%;
 	position: relative;
@@ -85,3 +88,4 @@
 	}
 	
 }
+

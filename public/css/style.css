@@ -33,9 +33,6 @@
 	text-decoration: none;
 	margin-left: 10px;
 }
-.project{
-	max-width: 470px;
-}
 .project-search-bar {
 	width: 65%;
 	position: relative;
@@ -88,4 +85,9 @@
 	}
 	
 }
-
+@media(max-width:400px){
+	.card-body .btn{
+		padding: .15rem .25rem;
+		
+	}
+}

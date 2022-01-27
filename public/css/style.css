@@ -15,7 +15,19 @@
     height:16rem;
     width:19rem;
 }
-
+.adjust-education-pic, .adjust-experience-pic{
+	height: 3rem;
+	width: 4rem;
+}
+.education-left, .experience-left{
+	margin-right: 1rem;
+}
+.individual-educaion, .individual-experience {
+	margin-bottom:2rem;
+}
+.education-list:last-of-type, .experience-list:last-of-type {
+	margin-bottom: 3rem;
+}
 .social-media-links{
 	justify-content: space-around;
 }
@@ -56,6 +68,7 @@
 .project-page-heading{
 	margin-right: 0.5rem;
 }
+
 .smile-face{
 	font-size: 35px;
 }

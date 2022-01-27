@@ -39,7 +39,7 @@
       <div class="container shadow p-3 mb-5 bg-body rounded">
           <h1 class="text-center">Admin Page</h1>
           <hr>
-          <!---Side Tabs  --->
+        <!---Side Tabs  --->
           <div class="d-flex align-items-start">
             <div class="nav flex-column nav-pills me-3 border rounded w-25 p-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
               <button class="nav-link active" id="v-pills-education-tab" data-bs-toggle="pill" data-bs-target="#v-pills-education" type="button" role="tab" aria-controls="v-pills-education" aria-selected="true">Education</button>
@@ -50,62 +50,67 @@
 
               <button class="nav-link" id="v-pills-profile-tab" data-bs-toggle="pill" data-bs-target="#v-pills-profile" type="button" role="tab" aria-controls="v-pills-profile" aria-selected="false">Profile</button>
 
-              <button class="nav-link" id="v-pills-activities-tab" data-bs-toggle="pill" data-bs-target="#v-pills-activities" type="button" role="tab" aria-controls="v-pills-activities" aria-selected="false">Activties</button>
+              <button class="nav-link" id="v-pills-activities-tab" data-bs-toggle="pill" data-bs-target="#v-pills-activities" type="button" role="tab" aria-controls="v-pills-activities" aria-selected="false">Activities</button>
 
               <button class="nav-link" id="v-pills-projects-tab" data-bs-toggle="pill" data-bs-target="#v-pills-projects" type="button" role="tab" aria-controls="v-pills-projects" aria-selected="false">Projects</button>
 
               <button class="nav-link" id="v-pills-contacts-tab" data-bs-toggle="pill" data-bs-target="#v-pills-contacts" type="button" role="tab" aria-controls="v-pills-contacts" aria-selected="false">Contact requests</button>
             </div>
 
-            <!---Main Content (save point) --->
+        <!---Main Content--->
             <div class="tab-content border rounded w-75 p-3" id="v-pills-tabContent">
               <div class="tab-pane fade show active" id="v-pills-education" role="tabpanel" aria-labelledby="v-pills-education-tab">
                 <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#education-modal">Add Education</button>
-                <table class="articles-list table table-striped">
+                <table class="admin-education-list table table-striped">
                   <tbody></tbody>
                 </table>
               </div>
 
               <div class="tab-pane fade" id="v-pills-skills" role="tabpanel" aria-labelledby="v-pills-skills-tab">
                 <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#skills-modal">Add Skills</button>
-                <table class="articles-list table table-striped">
+                <table class="admin-education-list table table-striped">
                   <tbody></tbody>
                 </table>
               </div>
 
-              <div class="tab-pane fade" id="v-pills-requests" role="tabpanel" aria-labelledby="v-pills-requests-tab">
+              <div class="tab-pane fade" id="v-pills-experience" role="tabpanel" aria-labelledby="v-pills-experience-tab">
+                <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#experience-modal">Add Experience</button>
+                <table class="admin-experience-list table table-striped">
+                  <tbody></tbody>
+                </table>
+              </div>
+
+              <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
+                <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#profile-modal">Add Profile</button>
+                <table class="admin-profile table table-striped">
+                  <tbody></tbody>
+                </table>
+              </div>
+
+              <div class="tab-pane fade" id="v-pills-activities" role="tabpanel" aria-labelledby="v-pills-activities-tab">
+                <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#activities-modal">Add Activities</button>
+                <table class="admin-activities-table table table-striped">
+                  <tbody></tbody>
+                </table>
+              </div>
+
+              <div class="tab-pane fade" id="v-pills-projects" role="tabpanel" aria-labelledby="v-pills-projects-tab">
+                <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#projects-modal">Add Projects</button>
+                <table class="admin-projects-table table table-striped">
+                  <tbody></tbody>
+                </table>
+              </div>
+
+              <div class="tab-pane fade" id="v-pills-contacts" role="tabpanel" aria-labelledby="v-pills-contacts-tab">
                 <table class="table table-striped">
                   <tbody></tbody>
                 </table>
               </div>
-              <div class="tab-pane fade" id="v-pills-add-post" role="tabpanel" aria-labelledby="v-pills-add-post-tab">
-                <h1>Create Post</h1>
-                <form class="create-post-form">
-                  <div class="mb-3">
-                    <label for="title" class="mb-1">Title</label>
-                    <input type="text" id="title" class="form-control" placeholder="Title">
-                  </div>
-                  <div class="mb-3">
-                    <label for="country" class="mb-1">Country</label>
-                    <input type="text" id="country" class="form-control" placeholder="Country">
-                  </div>
-                  <div class="mb-3">
-                    <label for="imageURL" class="mb-1">Image</label>
-                    <input type="url" id="imageURL" class="form-control" placeholder="URL">
-                  </div>
-                  <div class="mb-3">
-                    <label for="image-file" class="mb-1">Or</label>
-                    <input type="file" id="image-file" class="form-control">
-                  </div>
-                  <div class="mb-3">
-                    <label for="text" class="mb-1">Text</label>
-                    <textarea id="text" cols="30" rows="10" class="form-control"></textarea>
-                  </div>
-                  <button class="btn btn-primary" type="submit">Create post</button>
-                </form>
-              </div>
+
               
-              <!---Modals  --->
+            <!-- Add Post-Modals  --->
+
+              <!---Education Modal --->
               <div class="modal fade" tabindex="-1" id="education-modal">
                 <div class="modal-dialog">
                   <div class="modal-content">
@@ -114,18 +119,38 @@
                       <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                        <form class = "education-form">
+                        <form class = "admin-education-form">
                             <div class="mb-3">
-                              <label for="name" class="education-title">Education title</label>
-                              <input type="text" class="form-control" id="education-title" placeholder="Name">
+                              <label for="admin-education-title" class="form-label">Education Title</label>
+                              <input type="text" class="form-control" id="admin-education-title" placeholder="Diploma in Accountancy">
                             </div>
                             <div class="mb-3">
-                              <label for="education-description" class="form-label">Description</label>
-                              <textarea class="form-control" id="education-description"></textarea>
+                              <label for="admin-education-organization" class="form-label">Education Organization</label>
+                              <input type="text" class="form-control" id="admin-education-organization" placeholder="Singapore Polytechnic">
                             </div>
                             <div class="mb-3">
-                              <label for="education-period" class="form-label">Period</label>
-                              <input type="text" class="form-control" id="education-period" placeholder="Period">
+                              <label for="admin-education-period" class="form-label">Education Period</label>
+                              <input type="text" class="form-control" id="admin-education-period" placeholder="2019 - Present">
+                            </div>
+                            <div class="mb-3">
+                              <label for="admin-education-location" class="form-label">Education Location</label>
+                              <input type="text" class="form-control" id="admin-education-location" placeholder="Singapore">
+                            </div>
+                            <div class="mb-3">
+                              <label for="admin-education-description" class="form-label">Description</label>
+                              <textarea class="form-control" id="admin-education-description"></textarea>
+                            </div>
+                            <div class="mb-3">
+                              <label for="admin-education-imageURL" class="form-label">Image</label>
+                              <input type="url" id="admin-education-imageURL" class="form-control" placeholder="URL">
+                            </div>
+                            <div class="mb-3">
+                              <label for="admin-education-image-file" class="form-label">Or</label>
+                              <input type="file" id="admin-education-image-file" class="form-control">
+                            </div>
+                            <div class="mb-3">
+                              <label for="admin-education-certification-link" class="form-label">Certification Link</label>
+                              <input type="url" class="form-control" id="admin-education-certification-link">
                             </div>
                             <button type="submit" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#education-modal">Submit</button>
                         </form>
@@ -133,6 +158,167 @@
                   </div>
                 </div>
               </div>
+
+              <!---Experience Modal --->
+              <div class="modal fade" tabindex="-1" id="experience-modal">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title">Experience details</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form class = "admin-experience-form">
+                            <div class="mb-3">
+                              <label for="admin-experience-title" class="form-label">Experience Title</label>
+                              <input type="text" class="form-control" id="admin-experience-title" placeholder="Audit Intern">
+                            </div>
+                            <div class="mb-3">
+                              <label for="admin-experience-organization" class="form-label">Experience Organization</label>
+                              <input type="text" class="form-control" id="admin-experience-organization" placeholder="TWT">
+                            </div>
+                            <div class="mb-3">
+                              <label for="admin-experience-period" class="form-label">Experience Period</label>
+                              <input type="text" class="form-control" id="admin-experience-period" placeholder="2019 - Present">
+                            </div>
+                            <div class="mb-3">
+                              <label for="admin-experience-location" class="form-label">Experience Location</label>
+                              <input type="text" class="form-control" id="admin-experience-location" placeholder="Singapore">
+                            </div>
+                            <div class="mb-3">
+                              <label for="admin-experience-description" class="form-label">Description</label>
+                              <textarea class="form-control" id="admin-experience-description"></textarea>
+                            </div>
+                            <div class="mb-3">
+                              <label for="admin-experience-imageURL" class="form-label">Image</label>
+                              <input type="url" id="admin-experience-imageURL" class="form-control" placeholder="URL">
+                            </div>
+                            <div class="mb-3">
+                              <label for="admin-experience-image-file" class="form-label">Or</label>
+                              <input type="file" id="admin-experience-image-file" class="form-control">
+                            </div>
+                            <div class="mb-3">
+                              <label for="admin-experience-testimonial-link" class="form-label">Testimonial Link</label>
+                              <input type="url" class="form-control" id="admin-experience-testimonial-link">
+                            </div>
+                            <button type="submit" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#experience-modal">Submit</button>
+                        </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!---Skills Modal --->
+              <div class="modal fade" tabindex="-1" id="skills-modal">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title">Skills details</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form class = "admin-skills-form">
+                            <div class="mb-3">
+                              <label for="admin-skills-name" class="form-label">Skills Name</label>
+                              <input type="text" class="form-control" id="admin-skills-name" placeholder="Patience">
+                            </div>
+                            <button type="submit" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#skills-modal">Submit</button>
+                        </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+               <!---Profile Modal --->
+               <div class="modal fade" tabindex="-1" id="profile-modal">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title">Profile details</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form class = "admin-profile">
+                          <label for="admin-profile-description" class="form-label">Profile Description</label>
+                          <textarea class="form-control" id="admin-profile-description"></textarea>
+                          <button type="submit" class="btn btn-primary mt-2" data-bs-toggle="modal" data-bs-target="#profile-modal">Submit</button>
+                        </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!---Activities Modal --->
+              <div class="modal fade" tabindex="-1" id="activities-modal">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title">Activities details</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form class = "admin-activities-form">
+                            <div class="mb-3">
+                              <label for="admin-activities-title" class="form-label">Activity Title</label>
+                              <input type="text" class="form-control" id="admin-activities-title" placeholder="AIC 2019">
+                            </div>
+                            <div class="mb-3">
+                              <label for="admin-activities-period" class="form-label">Activity Period</label>
+                              <input type="text" class="form-control" id="admin-activities-period" placeholder="2019">
+                            </div>
+                            <div class="mb-3">
+                              <label for="admin-activities-description" class="form-label">Description</label>
+                              <textarea class="form-control" id="admin-activities-description"></textarea>
+                            </div>
+                            <div class="mb-3">
+                              <label for="admin-activities-link" class="form-label">Link</label>
+                              <input type="url" class="form-control" id="admin-activities-link">
+                            </div>
+                            <button type="submit" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#activities-modal">Submit</button>
+                        </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!---Projects Modal --->
+              <div class="modal fade" tabindex="-1" id="projects-modal">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title">Projects details</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form class = "admin-projects-form">
+                            <div class="mb-3">
+                              <label for="admin-projects-title" class="form-label">Project Title</label>
+                              <input type="text" class="form-control" id="admin-projects-title" placeholder="Personal Website">
+                            </div>
+                            <div class="mb-3">
+                              <label for="admin-projects-description" class="form-label">Description</label>
+                              <textarea class="form-control" id="admin-projects-description"></textarea>
+                            </div>
+                            <div class="mb-3">
+                              <label for="admin-projects-imageURL" class="form-label">Image</label>
+                              <input type="url" id="admin-projects-imageURL" class="form-control" placeholder="URL">
+                            </div>
+                            <div class="mb-3">
+                              <label for="admin-projects-image-file" class="form-label">Or</label>
+                              <input type="file" id="admin-projects-image-file" class="form-control">
+                            </div>
+                            <div class="mb-3">
+                              <label for="admin-projects-github-link" class="form-label">Github Link</label>
+                              <input type="url" class="form-control" id="admin-projects-github-link">
+                            </div>
+                            <button type="submit" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#projects-modal">Submit</button>
+                        </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+
 
 
             </div>

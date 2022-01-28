@@ -1,16 +1,16 @@
 let mongoose = require('mongoose');
 let Schema = mongoose.Schema;
 
-let educationSchema = new Schema({
+let experienceSchema = new Schema({
     title: String,
     organization: String,
     period: String, 
     description: String,
     location: String,
     imageURL: String,
-    certification_link: String
+    testimonial_link: String
 });
 
-let education = mongoose.model('education', educationSchema, 'education');
+let experience = mongoose.model('experience', experienceSchema, 'experience');
 
-module.exports = { education }
+module.exports = { experience }

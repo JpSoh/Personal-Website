@@ -12,7 +12,11 @@ let cookieParser = require('cookie-parser');
 //Generate cookie for every requests
 app.use(cookieParser());
 //Connect to Database
-mongoose.connect('mongodb://localhost/personal-website');
+mongoose.connect('mongodb://localhost/personal-website').then(() => {
+    console.log("Connected to MongoDB");
+}).catch((error) => {
+    console.log("Something is wrong");
+})
 //Convert JSON format
 app.use(express.json());
 //Using ejs, first argument specifies the template engine, 
@@ -28,12 +32,6 @@ let imageStorage = multer.diskStorage({
 app.use(multer({storage: imageStorage}).single('imageFile'));
 
 //Import Router
-
-
-
-//Impot models
-
-
 
 
 

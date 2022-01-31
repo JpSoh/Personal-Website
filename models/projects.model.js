@@ -2,6 +2,7 @@ let mongoose = require('mongoose');
 let Schema = mongoose.Schema;
 
 let projectSchema = new Schema({
+    id: String,
     title: String,
     date: Date,
     description: String,

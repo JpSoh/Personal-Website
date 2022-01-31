@@ -2,6 +2,7 @@ let mongoose = require('mongoose');
 let Schema = mongoose.Schema;
 
 let activitiesSchema = new Schema({
+    id: String,
     title: String,
     period: String, 
     description: String,

@@ -2,6 +2,7 @@ let mongoose = require('mongoose');
 let Schema = mongoose.Schema;
 
 let educationSchema = new Schema({
+    id: String,
     title: String,
     organization: String,
     period: String, 

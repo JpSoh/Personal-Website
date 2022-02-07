@@ -10,6 +10,6 @@ let projectSchema = new Schema({
     github_link: String
 });
 
-let projects = mongoose.model('projects', projectsSchema, 'project');
+let projects = mongoose.model('projects', projectSchema, 'project');
 
 module.exports = { projects }

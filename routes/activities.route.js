@@ -1,7 +1,7 @@
 //Connect to uniqid
 let uniqid = require('uniqid'); 
 //Import Schema
-let activties = require('../models/activities.model').activities;
+let activities = require('../models/activities.model').activities;
 //Pre-requirement functions for express
 let express = require('express');
 //Redirect request from one file to another
@@ -10,7 +10,7 @@ let router = express.Router();
 //Adding new activities to database
 router.post('/', async (req, resp) =>{
     let reqBody = req.body;
-    let newRequest = new activties({
+    let newRequest = new activities({
         id: uniqid(),
         title: reqBody.title,
         period: reqBody.period,
@@ -21,29 +21,29 @@ router.post('/', async (req, resp) =>{
     resp.send("Accepted!");
 });
 
-//Deleting activties
+//Deleting activities
 router.delete('/:id', async (req, resp) =>{
-    await activties.deleteOne({id: req.params.id})
+    await activities.deleteOne({id: req.params.id})
     resp.send("Deleted!")
 });
 
 //Get all activities from database
 router.get('/', async (req, resp) =>{
-    let posts = await activties.find();
-    resp.send(posts);
+    let activitiy = await activities.find();
+    resp.send(activitiy);
 })
 
 //Update function: Get details from the database by ID to be displayed on form
 router.get('/:id', async (req, resp) =>{
     let id = req.params.id;
-    let post = await activties.findOne({id: id});
-    resp.send(post);
+    let activitiy = await activities.findOne({id: id});
+    resp.send(activitiy);
 })
 
 //Update request
 router.put('/:id', async (req,resp) => {
     let id = req.params.id;
-    await activties.updateOne({id: id}, req.body);
+    await activities.updateOne({id: id}, req.body);
     resp.send('Updated!');
 })
 

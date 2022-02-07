@@ -1,0 +1,35 @@
+Paste when finish routes
+//Import Router
+activitesRouter = require('./routes/activities.route');
+admin_passwordRouter = require('./routes/admin_password.route')
+contact_meRouter = require('./routes/contact_me.route')
+educationRouter = require('./routes/education.route')
+experienceRouter = require('./routes/experience.route')
+profileRouter = require('./routes/profile.route')
+projectsRouter = require('./routes/projects.route')
+skillsRouter = require('./routes/skills.route')
+
+// Redirect Request to Router
+app.use('/activities', activitesRouter);
+app.use('/admin_password', admin_passwordRouter);
+app.use('/contact_me', contact_meRouter);
+app.use('/education', educationRouter);
+app.use('/experience',experienceRouter);
+app.use('/profile', profileRouter);
+app.use('/projects', projectsRouter);
+app.use('/skills', skillsRouter);
+
+Git logs:
+31/1/2022 Ver 1  2d5777792d40e6183410f04276718a9f1b2dd96e
+28/1/2022 Ver 2  075a6b953c7d704722ce1038f79e11880864319e
+
+
+//Render login page
+app.get('/login', function(req, res) {
+    res.render('login');
+  });
+
+https://www.digitalocean.com/community/tutorials/how-to-use-ejs-to-template-your-node-application
+
+
+Database models --> Servers (Route Response) --> Main.js ===> ejs and auth 

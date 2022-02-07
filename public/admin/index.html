@@ -55,6 +55,8 @@
               <button class="nav-link" id="v-pills-projects-tab" data-bs-toggle="pill" data-bs-target="#v-pills-projects" type="button" role="tab" aria-controls="v-pills-projects" aria-selected="false">Projects</button>
 
               <button class="nav-link" id="v-pills-contacts-tab" data-bs-toggle="pill" data-bs-target="#v-pills-contacts" type="button" role="tab" aria-controls="v-pills-contacts" aria-selected="false">Contact requests</button>
+
+              <button class="nav-link" id="v-pills-contacts-tab" data-bs-toggle="pill" data-bs-target="#v-pills-about" type="button" role="tab" aria-controls="v-pills-about" aria-selected="false">About me</button>
             </div>
 
         <!---Main Content--->
@@ -81,8 +83,8 @@
               </div>
 
               <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
-                <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#profile-modal">Add Profile</button>
-                <table class="admin-profile table table-striped">
+                <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#profile-modal">Edit Profile</button>
+                <table class="admin-profile-table table table-striped">
                   <tbody></tbody>
                 </table>
               </div>
@@ -107,7 +109,12 @@
                 </table>
               </div>
 
-              
+              <div class="tab-pane fade" id="v-pills-about" role="tabpanel" aria-labelledby="v-pills-about-tab">
+                <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#about-modal">Edit About me</button>
+                <table class="admin-about-table table table-striped">
+                  <tbody></tbody>
+                </table>
+              </div>
             <!-- Add Post-Modals  --->
 
               <!---Education Modal --->
@@ -238,7 +245,7 @@
                       <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                        <form class = "admin-profile">
+                        <form class = "admin-profile-form">
                           <label for="admin-profile-description" class="form-label">Profile Description</label>
                           <textarea class="form-control" id="admin-profile-description"></textarea>
                           <button type="submit" class="btn btn-primary mt-2" data-bs-toggle="modal" data-bs-target="#profile-modal">Submit</button>
@@ -318,8 +325,24 @@
                 </div>
               </div>
 
-
-
+                <!---About Modal --->
+                <div class="modal fade" tabindex="-1" id="about-modal">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title">About me details</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                      </div>
+                      <div class="modal-body">
+                          <form class = "admin-about-form">
+                            <label for="admin-about-description" class="form-label">About Me Description</label>
+                            <textarea class="form-control" id="admin-about-description"></textarea>
+                            <button type="submit" class="btn btn-primary mt-2" data-bs-toggle="modal" data-bs-target="#about-modal">Submit</button>
+                          </form>
+                      </div>
+                    </div>
+                  </div>
+                </div>
 
             </div>
           </div>

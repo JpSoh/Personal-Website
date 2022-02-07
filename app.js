@@ -39,6 +39,7 @@ experienceRouter = require('./routes/experience.route')
 profileRouter = require('./routes/profile.route')
 projectsRouter = require('./routes/projects.route')
 skillsRouter = require('./routes/skills.route')
+aboutRouter = require('./routes/about.route')
 
 // Redirect Request to Router
 app.use('/activities', activitesRouter);;
@@ -48,6 +49,8 @@ app.use('/experience',experienceRouter);
 app.use('/projects', projectsRouter);
 app.use('/skills', skillsRouter);
 app.use('/profile',profileRouter);
+app.use('/profile',profileRouter);
+app.use('/about',aboutRouter);
 
 app.listen(3000, ()=>{
     console.log("Listening 3000");

@@ -22,7 +22,7 @@ router.post('/', async (req, resp) =>{
     let newRequest = new projects({
         id: uniqid(),
         title: reqBody.title,
-        date: reqBody.date, 
+        date: new Date(), 
         description: reqBody.description,
         imageURL: imgPath,
         github_link: reqBody.github_link

@@ -33,3 +33,6 @@ https://www.digitalocean.com/community/tutorials/how-to-use-ejs-to-template-your
 
 
 Database models --> Servers (Route Response) --> Main.js ===> ejs and auth 
+
+For project page, hide content from the 4th div onwards. It can only be displayed when I press the read more button. The show less button will be displayed once I press the read more button. (Toggle buttons)
+Also for project page, need to show results on the the search button to filter out results

@@ -49,7 +49,6 @@ app.use('/experience',experienceRouter);
 app.use('/projects', projectsRouter);
 app.use('/skills', skillsRouter);
 app.use('/profile',profileRouter);
-app.use('/profile',profileRouter);
 app.use('/about',aboutRouter);
 
 app.listen(3000, ()=>{

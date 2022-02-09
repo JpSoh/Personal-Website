@@ -5,6 +5,7 @@ let contactSchema = new Schema({
     id: String,
     name: String,
     email: String,
+    date: Date,
     message: String
 });
 

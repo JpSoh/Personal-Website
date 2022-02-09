@@ -12,6 +12,7 @@ router.post('/', async (req, resp) =>{
     let reqBody = req.body;
     let newRequest = new contact({
         id: uniqid(),
+        date:new Date(), 
         name: reqBody.name,
         email: reqBody.email,
         message: reqBody.message,

@@ -51,6 +51,8 @@ let lastUpdate = function(date){
     return projectStatement;
 }
 
+
+
 document.addEventListener("DOMContentLoaded",async function(){
     let projects = await getProjects();
     let projectList = document.querySelector('.project-list');
@@ -79,4 +81,19 @@ document.addEventListener("DOMContentLoaded",async function(){
         //Insert HTML, there are 4 values we can choose for insertAdjacentHTML
         projectList.insertAdjacentHTML('beforeend', projectHTML);
     })
+
 })
+
+//Display more results when pressing read more btn, note that this might have error since class project will not be dispayed till results are received from database 
+async function moreProjects(){
+    let projects = document.querySelector('.project-list .project:nth-child(n+5)');
+    let readMoreBtn = document.querySelector('.read-more-button');
+    readMoreBtn.addEventListener('click', function(){
+        if (projects.style.display === "none"){
+            projects.style.display = "block";
+        } else {
+            projects.style.display = "none";
+        }
+    })
+
+}

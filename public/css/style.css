@@ -68,6 +68,10 @@
 .project-page-heading{
 	margin-right: 0.5rem;
 }
+/*Do not display projects after 4th elemnt*/
+.project-list .project:nth-child(n+5){
+	display: "none";
+}
 
 .smile-face{
 	font-size: 35px;

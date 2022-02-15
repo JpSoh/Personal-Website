@@ -20,8 +20,7 @@ app.use('/projects', projectsRouter);
 app.use('/skills', skillsRouter);
 
 Git logs:
-31/1/2022 Ver 1  2d5777792d40e6183410f04276718a9f1b2dd96e
-28/1/2022 Ver 2  075a6b953c7d704722ce1038f79e11880864319e
+
 
 
 //Render login page
@@ -36,3 +35,7 @@ Database models --> Servers (Route Response) --> Main.js ===> ejs and auth
 
 For project page, hide content from the 4th div onwards. It can only be displayed when I press the read more button. The show less button will be displayed once I press the read more button. (Toggle buttons)
 Also for project page, need to show results on the the search button to filter out results
+
+Problems:
+1. Skills POST request got problem (Create.js)
+2. Solve how to update image on update.js

@@ -83,7 +83,7 @@
               </div>
 
               <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
-                <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#profile-modal">Edit Profile</button>
+                <button class="btn btn-primary" id="admin-profile-btn" data-bs-toggle="modal" data-bs-target="#profile-modal">Edit Profile</button>
                 <table class="admin-profile-table table table-striped mt-3">
                   <tbody></tbody>
                 </table>
@@ -336,7 +336,7 @@
                       <div class="modal-body">
                           <form class = "admin-about-form">
                             <label for="admin-about-description" class="form-label">About Me Description</label>
-                            <textarea class="form-control" id="admin-about-description"></textarea>
+                            <textarea class="form-control" id="admin-about-description" placeholder="<p>Lorem ipsum dolor</p>"></textarea>
                             <button type="submit" class="btn btn-primary mt-2" data-bs-toggle="modal" data-bs-target="#about-modal">Submit</button>
                           </form>
                       </div>
@@ -349,9 +349,9 @@
             <!---Hidden Contents --->
               <!---Update Education --->
               <button class="btn btn-primary d-none" id="update-education-btn" data-bs-toggle="modal" data-bs-target="#update-education-modal">Edit Education</button>
-              <button class="btn btn-primary d-none" data-bs-toggle="modal" data-bs-target="#update-experience-modal">Edit Experience</button>
-              <button class="btn btn-primary d-none" data-bs-toggle="modal" data-bs-target="#update-activities-modal">Edit Activities</button>
-              <button class="btn btn-primary d-none" data-bs-toggle="modal" data-bs-target="#update-projects-modal">Edit Projects</button>
+              <button class="btn btn-primary d-none" id="update-experience-btn"  data-bs-toggle="modal" data-bs-target="#update-experience-modal">Edit Experience</button>
+              <button class="btn btn-primary d-none"  id="update-activities-btn" data-bs-toggle="modal" data-bs-target="#update-activities-modal">Edit Activities</button>
+              <button class="btn btn-primary d-none"  id="update-projects-btn"  data-bs-toggle="modal" data-bs-target="#update-projects-modal">Edit Projects</button>
 
                 <!---Update Education Modal --->
                 <div class="modal fade" tabindex="-1" id="update-education-modal">

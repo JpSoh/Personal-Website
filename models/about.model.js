@@ -2,6 +2,8 @@ let mongoose = require('mongoose');
 let Schema = mongoose.Schema;
 
 let aboutSchema = new Schema({
+   id: String,
+   date: String,
    description: String
 });
 

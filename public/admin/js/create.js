@@ -76,21 +76,7 @@ experienceImageFile.addEventListener('change', () =>  disableInput(experienceIma
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//Skills Create (PROBLEM #1)
+//Skills Create
 let createSkillsForm = document.querySelector('.admin-skills-form');
 let SkillsName = document.querySelector('#admin-skills-name');
 //Skills POST request 
@@ -104,3 +90,64 @@ createSkillsForm.addEventListener('submit',function(e){
         body: data
     }).then((response) => response.text()).then((data) => window.history.go());
 })
+
+
+//Activities Create
+let createActivitiesForm = document.querySelector('.admin-activities-form');
+let activitiesTitle = document.querySelector('#admin-activities-title');
+let activitiesPeriod = document.querySelector('#admin-activities-period');
+let activitiesDescription = document.querySelector('#admin-activities-description');
+let activitiesLink = document.querySelector('#admin-activities-link');
+//Activities POST request 
+createActivitiesForm.addEventListener('submit',function(e){
+    //Prevent default browser action for submit
+    e.preventDefault();
+    let data = new FormData(); //By using the form format, we can work with files
+    data.append('title', activitiesTitle.value);
+    data.append('period', activitiesPeriod.value);
+    data.append('description', activitiesDescription.value);
+    data.append('link', activitiesLink.value);
+
+    fetch('http://localhost:3000/activities', {
+        method: 'POST',
+        body: data
+    }).then((response) => response.text()).then((data) => window.history.go());
+})
+
+
+//Profile Create
+let profileForm = document.querySelector('.admin-profile-form');
+let profileDescription = document.querySelector('#admin-profile-description');
+
+//Profile POST request 
+profileForm.addEventListener('submit',function(e){
+    //Prevent default browser action for submit
+    e.preventDefault();
+    let data = new FormData(); //By using the form format, we can work with files
+    data.append('description', profileDescription.value);
+    fetch('http://localhost:3000/profile', {
+        method: 'POST',
+        body: data
+    }).then((response) => response.text()).then((data) => window.history.go());
+})
+
+//About Create
+let aboutForm = document.querySelector('.admin-about-form');
+let aboutDescription = document.querySelector('#admin-about-description');
+
+//Profile POST request 
+aboutForm.addEventListener('submit',function(e){
+    //Prevent default browser action for submit
+    e.preventDefault();
+    let data = new FormData(); //By using the form format, we can work with files
+    data.append('description', aboutDescription.value);
+    fetch('http://localhost:3000/about', {
+        method: 'POST',
+        body: data
+    }).then((response) => response.text()).then((data) => window.history.go());
+})
+
+
+
+
+

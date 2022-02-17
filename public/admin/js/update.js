@@ -1,4 +1,3 @@
-//Update Education
 {
 //Update Education
     //Disable one of the function: the image file function or the image URL function
@@ -61,4 +60,109 @@
     })
     educationImageURLInput.addEventListener('change', () => disableInput(educationImageURLInput, educationImageFileInput));
     educationImageFileInput.addEventListener('change', () =>  disableInput(educationImageFileInput, educationImageURLInput));
+
+
+
+
+
+//Update Experience
+    //Event Delegation, since the posts are stored in the database before loading the HTML
+    let experienceBlock = document.querySelector('.admin-experience-list');
+    let updateexperienceBtn = document.querySelector('#update-experience-btn');
+    let updateexperienceForm = document.querySelector('.update-admin-experience-form')
+    let exp_id;
+
+    let experienceTitleInput = document.querySelector('#update-admin-experience-title');
+    let experienceOrganizationInput = document.querySelector('#update-admin-experience-organization');
+    let experiencePeriodInput = document.querySelector('#update-admin-experience-period');
+    let experienceLocationInput = document.querySelector('#update-admin-experience-location');
+    let experienceDescriptionInput = document.querySelector('#update-admin-experience-description');
+    let experienceImageURLInput = document.querySelector('#update-admin-experience-imageURL');
+    let experienceImageFileInput = document.querySelector('#update-admin-experience-image-file');
+    let experienceTestimonialInput = document.querySelector('#update-admin-experience-testimonial-link');
+
+    //Get current details
+    experienceBlock.addEventListener('click', async function(e){
+        if(e.target.classList.contains('edit-btn')){
+            exp_id = e.target.parentNode.parentNode.querySelector('.id').value; 
+            let experiencePostInfo = await fetch('http://localhost:3000/experience/'+exp_id)
+                .then((response) => response.json())
+                .then((data) => data)
+
+            experienceTitleInput.value = experiencePostInfo.title;
+            experienceOrganizationInput.value = experiencePostInfo.organization;
+            experiencePeriodInput.value = experiencePostInfo.period;
+            experienceLocationInput.value = experiencePostInfo.location;
+            experienceDescriptionInput.value = experiencePostInfo.description;
+            experienceTestimonialInput.value = experiencePostInfo.testimonial_link;
+            updateexperienceBtn.click();
+        }
+    })
+
+    //Update when press submit
+    updateexperienceForm.addEventListener('submit', async function(e){
+        e.preventDefault();
+
+        let data = new FormData(); //By using the form format, we can work with files
+        data.append('title', experienceTitleInput.value);
+        data.append('organization', experienceOrganizationInput.value);
+        data.append('period', experiencePeriodInput.value);
+        data.append('description', experienceDescriptionInput.value);
+        data.append('location', experienceLocationInput.value);
+        data.append('testimonial_link',  experienceTestimonialInput.value);
+
+        await fetch('http://localhost:3000/experience/'+exp_id, {
+            method: 'PUT',
+            body: data
+        }).then((response) => response.text()).then((data) => window.history.go())
+    })
+    experienceImageURLInput.addEventListener('change', () => disableInput(experienceImageURLInput, experienceImageFileInput));
+    experienceImageFileInput.addEventListener('change', () =>  disableInput(experienceImageFileInput, experienceImageURLInput));
+
+
+//Update Activities
+    //Event Delegation, since the posts are stored in the database before loading the HTML
+    let activitiesBlock = document.querySelector('.admin-activities-table');
+    let updateActivitiesBtn = document.querySelector('#update-activities-btn');
+    let updateActivitiesForm = document.querySelector('.update-admin-activities-form')
+    let acv_id;
+
+    let activitiesTitleInput = document.querySelector('#update-admin-activities-title');
+    let activitiesPeriodInput = document.querySelector('#update-admin-activities-period');
+    let activitiesDescriptionInput = document.querySelector('#update-admin-activities-description');
+    let activitiesLinkInput = document.querySelector('#update-admin-activities-link');
+
+    //Get current details
+    activitiesBlock.addEventListener('click', async function(e){
+        if(e.target.classList.contains('edit-btn')){
+            acv_id = e.target.parentNode.parentNode.querySelector('.id').value; 
+            let activitiesPostInfo = await fetch('http://localhost:3000/activities/'+acv_id)
+                .then((response) => response.json())
+                .then((data) => data)
+
+            activitiesTitleInput.value = activitiesPostInfo.title;
+            activitiesPeriodInput.value = activitiesPostInfo.period;
+            activitiesDescriptionInput.value = activitiesPostInfo.description;
+            activitiesLinkInput.value = activitiesPostInfo.link;
+            updateActivitiesBtn.click();
+        }
+    })
+
+    //Update when press submit
+    updateActivitiesForm.addEventListener('submit', async function(e){
+        e.preventDefault();
+
+        let data = new FormData(); //By using the form format, we can work with files
+        data.append('title', activitiesTitleInput.value);
+        data.append('period', activitiesPeriodInput.value);
+        data.append('description', activitiesDescriptionInput.value);
+        data.append('link', activitiesLinkInput.value);
+
+        await fetch('http://localhost:3000/activities/'+acv_id, {
+            method: 'PUT',
+            body: data
+        }).then((response) => response.text()).then((data) => window.history.go())
+    })
+
+
 }

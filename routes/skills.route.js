@@ -27,8 +27,15 @@ router.delete('/:id', async (req, resp) =>{
 
 //Get all skills from database
 router.get('/', async (req, resp) =>{
-    let skills = await skills.find();
-    resp.send(skills);
+    let skill= await skills.find();
+    resp.send(skill);
+})
+
+//Get details from the database by ID to be displayed on form
+router.get('/:id', async (req, resp) =>{
+    let id = req.params.id;
+    let skill = await skills.findOne({id: id});
+    resp.send(skill);
 })
 
 //Connect router to app.js file

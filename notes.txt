@@ -36,6 +36,14 @@ Database models --> Servers (Route Response) --> Main.js ===> ejs and auth
 For project page, hide content from the 4th div onwards. It can only be displayed when I press the read more button. The show less button will be displayed once I press the read more button. (Toggle buttons)
 Also for project page, need to show results on the the search button to filter out results
 
+
+
+
 Problems:
-1. Skills POST request got problem (Create.js)
-2. Solve how to update image on update.js
+1. Solve how to update image on update.js
+2. Delete accumulating entries in profile and about me https://www.google.com/search?q=delete+documents+in+
+3. Solve how to add indentions in database
+
+Can be improved:
+1. Contact form submission to not refresh the whole page itself. 
+2. Display current profile on the input when click edit profile

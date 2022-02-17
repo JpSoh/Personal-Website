@@ -7,16 +7,29 @@ let router = express.Router();
 //Connect to uniqid
 let uniqid = require('uniqid'); 
 
-//Get profile from database
+//Adding profile 
+router.post('/', async (req, resp) =>{
+    let reqBody = req.body;
+    let newRequest = new profile({
+        id: uniqid(),
+        date: new Date(),
+        description: reqBody.description,
+    })
+    await newRequest.save();
+    resp.send("Accepted!");
+});
+
+//Send latest profile
 router.get('/', async (req, resp) =>{
-    let profile = await profile.find();
-    resp.send(profile);
+    let profiles = await profile.find().sort({ _id: -1 }).limit(1)
+    resp.send(profiles);
 })
 
-//Update request
-router.put('/', async (req,resp) => {
-    await profile.updateMany({}, req.body);
-    resp.send('Updated!');
+// Get details from the database by ID to be displayed on form
+router.get('/:id', async (req, resp) =>{
+    let id = req.params.id;
+    let profiles = await profile.findOne({id: id});
+    resp.send(profiles);
 })
 
 

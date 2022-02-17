@@ -87,7 +87,7 @@
  
  //Delete skills when clicked remove button
  //Event Delegation, since the posts are stored in the database before loading the HTML
- let skillsBlock = document.querySelector('.admin-skills-table');
+ let skillsBlock = document.querySelector('.admin-skills-list');
  //e stands for event, target stores properties of the click 
  skillsBlock.addEventListener('click', function(e){
      //We delete the post if we press the remove btn

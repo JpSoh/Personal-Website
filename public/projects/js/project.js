@@ -5,18 +5,22 @@ contactRequestForm.addEventListener('submit', function(e){
     let name = document.querySelector('#name');
     let email = document.querySelector('#email')
     let message = document.querySelector('#message')
-    fetch('http://localhost:3000/contact_me', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-            name: name.value,
-            email:email.value,
-            message:message.value
-        })
-    }).then((resp) => resp.text())
-    .then(() => console.log("Submitted!"))
+    if(name.value && email.value && message.value){
+        fetch('http://localhost:3000/contact_me', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                name: name.value,
+                email:email.value,
+                message:message.value
+            })
+        }).then((resp) => resp.text())
+        .then(() => alert("Form successfully submitted!"));
+    } else{
+        alert("Incomplete form. Please ensure all fields are filled in!");
+    }
 })
 
 //Displayng Projects on the project page, not working with admin functions, Runs only after page is loaded.

@@ -5,21 +5,25 @@ contactRequestForm.addEventListener('submit', function(e){
     let name = document.querySelector('#name');
     let email = document.querySelector('#email')
     let message = document.querySelector('#message')
-    fetch('http://localhost:3000/contact_me', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-            name: name.value,
-            email:email.value,
-            message:message.value
-        })
-    }).then((resp) => resp.text())
-    .then(() => console.log("Submitted!"))
+    if(name.value && email.value && message.value){
+        fetch('http://localhost:3000/contact_me', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                name: name.value,
+                email:email.value,
+                message:message.value
+            })
+        }).then((resp) => resp.text())
+        .then(() => alert("Form successfully submitted!"));
+    } else{
+        alert("Incomplete form. Please ensure all fields are filled in!");
+    }
 })
 
-//Displayng about me on the about page, not working with admin functions, Runs only after page is loaded.
+//Displayng profile on the main page, not working with admin functions, Runs only after page is loaded.
 async function getAbout() {
     return await fetch("http://localhost:3000/about")
                 .then((response) => response.json())
@@ -27,12 +31,12 @@ async function getAbout() {
 }
 
 document.addEventListener("DOMContentLoaded",async function(){
-    let aboutMe = await getAbout();
+    let abouts = await getAbout();
     let aboutPara = document.querySelector('.about-me-writing');
     aboutPara.innerHTML = '';
-    aboutMe.forEach((about) => {
+    abouts.forEach((about) => {
         let aboutHTML = `
-        <p>${aboutMe.description}</p>
+        <p class="profile-paragraph">${about.description}</p>
         `
         //Insert HTML, there are 4 values we can choose for insertAdjacentHTML
         aboutPara.insertAdjacentHTML('beforeend', aboutHTML);

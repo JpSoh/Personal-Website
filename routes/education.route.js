@@ -56,7 +56,6 @@ router.get('/:id', async (req, resp) =>{
 router.put('/:id', async (req,resp) => {
     let id = req.params.id;
     await education.updateOne({id: id}, req.body);
-    console.log(req.body);
     resp.send('Updated!');
 })
 

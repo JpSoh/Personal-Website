@@ -6,33 +6,37 @@ contactRequestForm.addEventListener('submit', function(e){
     let name = document.querySelector('#name');
     let email = document.querySelector('#email')
     let message = document.querySelector('#message')
-    fetch('http://localhost:3000/contact_me', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-            name: name.value,
-            email:email.value,
-            message:message.value
-        })
-    }).then((resp) => resp.text())
-    .then(() => console.log("Submitted!"))
+    if(name.value && email.value && message.value){
+        fetch('http://localhost:3000/contact_me', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                name: name.value,
+                email:email.value,
+                message:message.value
+            })
+        }).then((resp) => resp.text())
+        .then(() => alert("Form successfully submitted!"));
+    } else{
+        alert("Incomplete form. Please ensure all fields are filled in!");
+    }
 })
 
 
 //Displayng activties on the main page, not working with admin functions, Runs only after page is loaded.
-async function getActivties() {
-    return await fetch("http://localhost:3000/activties")
+async function getActivities() {
+    return await fetch("http://localhost:3000/activities")
                 .then((response) => response.json())
                 .then((data) => data);
 }
 
 document.addEventListener("DOMContentLoaded",async function(){
-    let activties = await getActivties();
+    let activities = await getActivities();
     let activitiyList = document.querySelector('.activity-list');
     activitiyList.innerHTML = '';
-    activties.forEach((activity) => {
+    activities.forEach((activity) => {
         let activityHTML = `
         <div class="card col-md-4  me-md-3 mb-3">
             <div class="card-body">
@@ -120,7 +124,7 @@ async function getSkills() {
                 .then((response) => response.json())
                 .then((data) => data);
 }
-//Node rejection error in this code
+
 document.addEventListener("DOMContentLoaded",async function(){
     let skills = await getSkills();
     let skillList = document.querySelector('.skills-list');
@@ -135,15 +139,21 @@ document.addEventListener("DOMContentLoaded",async function(){
 })
 
 //Displayng profile on the main page, not working with admin functions, Runs only after page is loaded.
-async function getprofile() {
+async function getProfile() {
     return await fetch("http://localhost:3000/profile")
                 .then((response) => response.json())
                 .then((data) => data);
 }
 
 document.addEventListener("DOMContentLoaded",async function(){
-    let profile = await getprofile();
-    let profilePara = document.querySelector('.profile-paragraph');
+    let profile = await getProfile();
+    let profilePara = document.querySelector('.profile-para');
     profilePara.innerHTML = '';
-    profilePara.textContent = profile.description;
+    profile.forEach((pro) => {
+        let profileHTML = `
+        <p class="profile-paragraph">${pro.description}</p>
+        `
+        //Insert HTML, there are 4 values we can choose for insertAdjacentHTML
+        profilePara.insertAdjacentHTML('beforeend', profileHTML);
+    })
 })

@@ -165,4 +165,46 @@
     })
 
 
+//Update Projects
+    //Event Delegation, since the posts are stored in the database before loading the HTML
+    let projectsBlock = document.querySelector('.admin-projects-table');
+    let updateProjectsBtn = document.querySelector('#update-projects-btn');
+    let updateprojectsForm = document.querySelector('.update-admin-projects-form')
+    let pro_id;
+
+    let projectsTitleInput = document.querySelector('#update-admin-projects-title');
+    let projectsDescriptionInput = document.querySelector('#update-admin-projects-description');
+    let projectsLinkInput = document.querySelector('#update-admin-projects-github-link');
+
+    //Get current details
+    projectsBlock.addEventListener('click', async function(e){
+        if(e.target.classList.contains('edit-btn')){
+            pro_id = e.target.parentNode.parentNode.querySelector('.id').value; 
+            let projectsPostInfo = await fetch('http://localhost:3000/projects/'+pro_id)
+                .then((response) => response.json())
+                .then((data) => data)
+
+            projectsTitleInput.value = projectsPostInfo.title;
+            projectsDescriptionInput.value = projectsPostInfo.description;
+            projectsLinkInput.value = projectsPostInfo.link;
+            updateProjectsBtn.click();
+        }
+    })
+
+    //Update when press submit
+    updateprojectsForm.addEventListener('submit', async function(e){
+        e.preventDefault();
+
+        let data = new FormData(); //By using the form format, we can work with files
+        data.append('title', projectsTitleInput.value);
+        data.append('description', projectsDescriptionInput.value);
+        data.append('github_link', projectsLinkInput.value);
+
+        await fetch('http://localhost:3000/projects/'+pro_id, {
+            method: 'PUT',
+            body: data
+        }).then((response) => response.text()).then((data) => window.history.go())
+    })
+
+
 }

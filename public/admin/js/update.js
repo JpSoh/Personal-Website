@@ -180,13 +180,13 @@
     projectsBlock.addEventListener('click', async function(e){
         if(e.target.classList.contains('edit-btn')){
             pro_id = e.target.parentNode.parentNode.querySelector('.id').value; 
-            let projectsPostInfo = await fetch('http://localhost:3000/projects/'+pro_id)
+            let projectsPostInfo = await fetch('http://localhost:3000/project_official/'+pro_id)
                 .then((response) => response.json())
                 .then((data) => data)
 
             projectsTitleInput.value = projectsPostInfo.title;
             projectsDescriptionInput.value = projectsPostInfo.description;
-            projectsLinkInput.value = projectsPostInfo.link;
+            projectsLinkInput.value = projectsPostInfo.github_link;
             updateProjectsBtn.click();
         }
     })
@@ -195,12 +195,13 @@
     updateprojectsForm.addEventListener('submit', async function(e){
         e.preventDefault();
 
-        let data = new FormData(); //By using the form format, we can work with files
+        let data = new FormData();
         data.append('title', projectsTitleInput.value);
         data.append('description', projectsDescriptionInput.value);
         data.append('github_link', projectsLinkInput.value);
+        data.append('date', new Date()); //Updated date
 
-        await fetch('http://localhost:3000/projects/'+pro_id, {
+        await fetch('http://localhost:3000/project_official/'+pro_id, {
             method: 'PUT',
             body: data
         }).then((response) => response.text()).then((data) => window.history.go())

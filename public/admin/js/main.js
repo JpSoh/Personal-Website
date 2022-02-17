@@ -136,7 +136,7 @@ async function addSkills() {
 }
 
 async function getProjects() {
-    return await fetch("http://localhost:3000/projects")
+    return await fetch("http://localhost:3000/project_official")
                 .then((response) => response.json())
                 .then((data) => data);
 }

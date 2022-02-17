@@ -167,7 +167,7 @@ createProjectsForm.addEventListener('submit',function(e){
     data.append('imageFile', projectsImageFile.files[0]); //This key is an array 
     data.append('github_link', projectsGithubLink.value);
 
-    fetch('http://localhost:3000/projects', {
+    fetch('http://localhost:3000/project_official', {
         method: 'POST',
         body: data
     }).then((response) => response.text()).then((data) => window.history.go());

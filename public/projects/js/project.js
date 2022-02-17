@@ -23,14 +23,63 @@ contactRequestForm.addEventListener('submit', function(e){
     }
 })
 
-/*
+
 //Displayng Projects on the project page, not working with admin functions, Runs only after page is loaded.
 async function getProjects() {
-    return await fetch("http://localhost:3000/projects")
+    return await fetch("http://localhost:3000/project_official")
                 .then((response) => response.json())
                 .then((data) => data);
 }
 
+
+
+document.addEventListener("DOMContentLoaded",async function(){
+    let projects = await getProjects();
+    let projectList = document.querySelector('.project-list');
+    projectList.innerHTML = '';
+    projects.forEach((project) => {
+        //projectDateStatement = lastUpdate(project.date);
+        let projectHTML = `
+        <div class="project col-5 shadow mb-5">
+            <div class="card">
+                <div class="row g-0">
+                    <div class="col-md-4">
+                        <img src="${project.imageURL}" class="img-fluid rounded-start project-img" alt="${project.title}">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h5 class="card-title">${project.title}</h5>
+                            <p class="card-text">${project.description}</p>
+                            <a href="${project.github_link}" class="btn btn-primary mb-5">Further Details</a>
+                            <p class="card-text"><small class="text-muted">Updated on ${project.date.substr(0, 10)}</small></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        `
+        //Insert HTML, there are 4 values we can choose for insertAdjacentHTML
+        projectList.insertAdjacentHTML('beforeend', projectHTML);
+    })
+
+})
+
+//Disable search bar for time being
+document.querySelector('#search').disabled = true;
+
+
+
+
+
+
+
+
+
+
+
+//Experiments:
+
+/*
 //Transform Date to look for last updated time
 let second = 1000;
 let minute = second * 60;
@@ -56,38 +105,6 @@ let lastUpdate = function(date){
     return projectStatement;
 }
 
-
-
-document.addEventListener("DOMContentLoaded",async function(){
-    let projects = await getProjects();
-    let projectList = document.querySelector('.project-list');
-    projectList.innerHTML = '';
-    projects.forEach((project) => {
-        projectDateStatement = lastUpdate(project.date);
-        let projectHTML = `
-        <div class="project col-5 shadow mb-5">
-            <div class="card">
-                <div class="row g-0">
-                    <div class="col-md-4">
-                        <img src="${project.imageURL}" class="img-fluid rounded-start project-img" alt="${project.title}">
-                    </div>
-                    <div class="col-md-8">
-                        <div class="card-body">
-                            <h5 class="card-title">${project.title}</h5>
-                            <p class="card-text">${project.description}</p>
-                            <a href="${project.github_link}" class="btn btn-primary mb-5">Further Details</a>
-                            <p class="card-text"><small class="text-muted">${projectDateStatement}</small></p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        `
-        //Insert HTML, there are 4 values we can choose for insertAdjacentHTML
-        projectList.insertAdjacentHTML('beforeend', projectHTML);
-    })
-
-})
 
 //Display more results when pressing read more btn, note that this might have error since class project will not be dispayed till results are received from database 
 async function moreProjects(){

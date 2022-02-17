@@ -37,7 +37,7 @@ contact_meRouter = require('./routes/contact_me.route')
 educationRouter = require('./routes/education.route')
 experienceRouter = require('./routes/experience.route')
 profileRouter = require('./routes/profile.route')
-projectsRouter = require('./routes/projects.route')
+projectsRouter = require('./routes/project.route')
 skillsRouter = require('./routes/skills.route')
 aboutRouter = require('./routes/about.route')
 

@@ -23,6 +23,7 @@ contactRequestForm.addEventListener('submit', function(e){
     }
 })
 
+/*
 //Displayng Projects on the project page, not working with admin functions, Runs only after page is loaded.
 async function getProjects() {
     return await fetch("http://localhost:3000/projects")
@@ -99,5 +100,5 @@ async function moreProjects(){
             projects.style.display = "none";
         }
     })
-
 }
+*/

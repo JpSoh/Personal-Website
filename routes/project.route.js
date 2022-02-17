@@ -1,7 +1,6 @@
-//Connect to uniqid
 let uniqid = require('uniqid'); 
 //Import Schema
-let projects = require('../models/projects.model').projects;
+let project = require('../models/projects.model').projects;
 //Pre-requirement functions for express
 let express = require('express');
 //Redirect request from one file to another
@@ -19,7 +18,7 @@ router.post('/', async (req, resp) =>{
     } else{
         imgPath = req.file.path.substring(req.file.path.indexOf(path.sep), req.file.path.length);
     }
-    let newRequest = new projects({
+    let newRequest = new project({
         id: uniqid(),
         title: reqBody.title,
         date: new Date(), 
@@ -33,27 +32,27 @@ router.post('/', async (req, resp) =>{
 
 //Deleting projects
 router.delete('/:id', async (req, resp) =>{
-    await projects.deleteOne({id: req.params.id})
+    await project.deleteOne({id: req.params.id})
     resp.send("Deleted!")
 });
 
 //Get all projects from database
 router.get('/', async (req, resp) =>{
-    let projects = await projects.find();
+    let projects = await project.find();
     resp.send(projects);
 })
 
 //Update function: Get details from the database by ID to be displayed on form
 router.get('/:id', async (req, resp) =>{
     let id = req.params.id;
-    let projects = await projects.findOne({id: id});
+    let projects = await project.findOne({id: id});
     resp.send(projects);
 })
 
 //Update request
 router.put('/:id', async (req,resp) => {
     let id = req.params.id;
-    await projects.updateOne({id: id}, req.body);
+    await project.updateOne({id: id}, req.body);
     resp.send('Updated!');
 })
 

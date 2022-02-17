@@ -92,23 +92,23 @@ createSkillsForm.addEventListener('submit',function(e){
 })
 
 
-//projects Create
-let createprojectsForm = document.querySelector('.admin-projects-form');
-let projectsTitle = document.querySelector('#admin-projects-title');
-let projectsPeriod = document.querySelector('#admin-projects-period');
-let projectsDescription = document.querySelector('#admin-projects-description');
-let projectsLink = document.querySelector('#admin-projects-link');
-//projects POST request 
-createprojectsForm.addEventListener('submit',function(e){
+//Activities Create
+let createactivitiesForm = document.querySelector('.admin-activities-form');
+let activitiesTitle = document.querySelector('#admin-activities-title');
+let activitiesPeriod = document.querySelector('#admin-activities-period');
+let activitiesDescription = document.querySelector('#admin-activities-description');
+let activitiesLink = document.querySelector('#admin-activities-link');
+//activities POST request 
+createactivitiesForm.addEventListener('submit',function(e){
     //Prevent default browser action for submit
     e.preventDefault();
     let data = new FormData(); //By using the form format, we can work with files
-    data.append('title', projectsTitle.value);
-    data.append('period', projectsPeriod.value);
-    data.append('description', projectsDescription.value);
-    data.append('link', projectsLink.value);
+    data.append('title', activitiesTitle.value);
+    data.append('period', activitiesPeriod.value);
+    data.append('description', activitiesDescription.value);
+    data.append('link', activitiesLink.value);
 
-    fetch('http://localhost:3000/projects', {
+    fetch('http://localhost:3000/activities', {
         method: 'POST',
         body: data
     }).then((response) => response.text()).then((data) => window.history.go());
@@ -135,7 +135,7 @@ profileForm.addEventListener('submit',function(e){
 let aboutForm = document.querySelector('.admin-about-form');
 let aboutDescription = document.querySelector('#admin-about-description');
 
-//Profile POST request 
+//About POST request 
 aboutForm.addEventListener('submit',function(e){
     //Prevent default browser action for submit
     e.preventDefault();
@@ -157,7 +157,7 @@ let projectsImageFile = document.querySelector('#admin-projects-image-file');
 let projectsGithubLink = document.querySelector('#admin-projects-github-link');
 
 //projects POST request 
-createprojectsForm.addEventListener('submit',function(e){
+createProjectsForm.addEventListener('submit',function(e){
     //Prevent default browser action for submit
     e.preventDefault();
     let data = new FormData(); //By using the form format, we can work with files

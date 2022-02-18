@@ -40,6 +40,7 @@ profileRouter = require('./routes/profile.route')
 projectOfficialRouter = require('./routes/project_official.route')
 skillsRouter = require('./routes/skills.route')
 aboutRouter = require('./routes/about.route')
+adminRouter = require('./routes/admin_password.route')
 
 // Redirect Request to Router
 app.use('/activities', activitesRouter);;
@@ -50,6 +51,7 @@ app.use('/project_official', projectOfficialRouter);
 app.use('/skills', skillsRouter);
 app.use('/profile',profileRouter);
 app.use('/about',aboutRouter);
+app.use('/admin_password', adminRouter)
 
 app.listen(3000, ()=>{
     console.log("Listening 3000");

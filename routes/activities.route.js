@@ -7,6 +7,7 @@ let express = require('express');
 //Redirect request from one file to another
 let router = express.Router();
 
+
 //Adding new activities to database
 router.post('/', async (req, resp) =>{
     let reqBody = req.body;

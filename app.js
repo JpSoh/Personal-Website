@@ -30,6 +30,8 @@ let imageStorage = multer.diskStorage({
 })
 //Convert binary data of image
 app.use(multer({storage: imageStorage}).single('imageFile'));
+//Connect to auth file for checking token
+let auth = require('./controllers/auth');
 
 //Import Router
 activitesRouter = require('./routes/activities.route')
@@ -56,6 +58,23 @@ app.use('/admin_password', adminRouter)
 app.listen(3000, ()=>{
     console.log("Listening 3000");
 })
+
+//Open admin page if there is a token and the token matches the server to see whether we logged in already
 app.get('/admin', (req,resp) => {
-    resp.render('admin');
+    let token = req.cookies['auth_token'];
+    if(token && auth.checkToken(token)){
+        resp.render('admin');
+    } else{
+        resp.redirect('/login');
+    }
+    
+})
+
+app.get('/login', (req,resp) => {
+    let token = req.cookies['auth_token'];
+    if(token && auth.checkToken(token)){
+        resp.redirect('/admin');
+    } else{
+        resp.render('login');
+    }
 })

@@ -14,7 +14,7 @@ router.post('/login', async (req,resp)=>{
     let password = req.body.password;
     //Find User based on email and password, returns an array
     let user = await admin_password.find()
-    if ((email = user.email) && (password = user.password)){
+    if ((email == user.email) && (password == user.password)){
         let token = auth.generateToken(user);
         //Store Token on cookie storage
         resp.cookie('auth_token', token);
@@ -24,7 +24,6 @@ router.post('/login', async (req,resp)=>{
         });
     }
 })
-
 
 //Connect router to app.js file
 module.exports = router; 

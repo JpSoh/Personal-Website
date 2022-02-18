@@ -47,3 +47,23 @@ Problems:
 Can be improved:
 1. Contact form submission to not refresh the whole page itself. 
 2. Display current profile on the input when click edit profile
+
+//Open admin page if there is a token and the token matches the server to see whether we logged in already
+app.get('/admin', (req,resp) => {
+    let token = req.cookies['auth_token'];
+    if(token && auth.checkToken(token)){
+        resp.render('admin');
+    } else{
+        resp.redirect('/login');
+    }
+    
+})
+
+app.get('/login', (req,resp) => {
+    let token = req.cookies['auth_token'];
+    if(token && auth.checkToken(token)){
+        resp.redirect('/admin');
+    } else{
+        resp.render('login');
+    }
+})

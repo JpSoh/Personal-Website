@@ -1,7 +1,7 @@
 let jwt = require('jsonwebtoken');
 let secret = '2y#cw@nT*pVt';
 
-//Generate Key
+//Generate cookie
 function generateToken(user){
     let payload = {
         email: user.email,

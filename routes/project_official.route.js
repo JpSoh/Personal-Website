@@ -9,7 +9,7 @@ let router = express.Router();
 //Connect to path, to display image from files. 
 let path = require('path');
 
-//Adding new project_official to database
+//Adding new project to database
 router.post('/', async (req, resp) =>{
     let reqBody = req.body;
     let imgPath;
@@ -31,19 +31,19 @@ router.post('/', async (req, resp) =>{
     resp.send("Accepted!");
 });
 
-//Deleting project_official
+//Deleting project
 router.delete('/:id', async (req, resp) =>{
     await project_official.deleteOne({id: req.params.id})
     resp.send("Deleted!")
 });
 
-//Get all project_official from database
+//Get all project from database
 router.get('/', async (req, resp) =>{
     let project = await project_official.find();
     resp.send(project);
 })
 
-//Update function: Get details from the database by ID to be displayed on form
+//Get details from the database by ID to be displayed on form
 router.get('/:id', async (req, resp) =>{
     let id = req.params.id;
     let project = await project_official.findOne({id: id});

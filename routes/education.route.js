@@ -45,7 +45,7 @@ router.get('/', async (req, resp) =>{
     resp.send(educations);
 })
 
-//Update function: Get details from the database by ID to be displayed on form
+//Get details from the database by ID to be displayed on form
 router.get('/:id', async (req, resp) =>{
     let id = req.params.id;
     let educations = await education.findOne({id: id});

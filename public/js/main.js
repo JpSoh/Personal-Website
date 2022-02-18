@@ -25,7 +25,7 @@ contactRequestForm.addEventListener('submit', function(e){
 })
 
 
-//Displayng activties on the main page, not working with admin functions, Runs only after page is loaded.
+//Displayng activties on the main page, Runs only after page is loaded.
 async function getActivities() {
     return await fetch("http://localhost:3000/activities")
                 .then((response) => response.json())
@@ -46,14 +46,14 @@ document.addEventListener("DOMContentLoaded",async function(){
                 <a href="${activity.link}" class="text-decoration-underline">See Certifications</a>
             </div>
         </div>`
-        //Insert HTML, there are 4 values we can choose for insertAdjacentHTML
+        
         activitiyList.insertAdjacentHTML('beforeend', activityHTML);
     })
 })
 
 
 
-//Displayng experience on the main page, not working with admin functions, Runs only after page is loaded.
+//Displayng experience on the main page, Runs only after page is loaded.
 async function getExperiences() {
     return await fetch("http://localhost:3000/experience")
                 .then((response) => response.json())
@@ -80,13 +80,13 @@ document.addEventListener("DOMContentLoaded",async function(){
             </div>
          </div>
         `
-        //Insert HTML, there are 4 values we can choose for insertAdjacentHTML
+        
         experienceList.insertAdjacentHTML('beforeend', experienceHTML);
     })
 })
 
 
-//Displayng education on the main page, not working with admin functions, Runs only after page is loaded.
+//Displayng education on the main page, Runs only after page is loaded.
 async function getEducation() {
     return await fetch("http://localhost:3000/education")
                 .then((response) => response.json())
@@ -113,12 +113,12 @@ document.addEventListener("DOMContentLoaded",async function(){
             </div>
       </div>
         `
-        //Insert HTML, there are 4 values we can choose for insertAdjacentHTML
+        
         educationList.insertAdjacentHTML('beforeend', educationHTML);
     })
 })
 
-//Displayng skills on the main page, not working with admin functions, Runs only after page is loaded.
+//Displayng skills on the main page, Runs only after page is loaded.
 async function getSkills() {
     return await fetch("http://localhost:3000/skills")
                 .then((response) => response.json())
@@ -133,12 +133,12 @@ document.addEventListener("DOMContentLoaded",async function(){
         let skillHTML = `
         <div class="p-3 me-2 mb-2 bg-secondary bg-gradient text-white col-md-3 col-xs-6">${skill.name}</div>
         `
-        //Insert HTML, there are 4 values we can choose for insertAdjacentHTML
+        
         skillList.insertAdjacentHTML('beforeend', skillHTML);
     })
 })
 
-//Displayng profile on the main page, not working with admin functions, Runs only after page is loaded.
+//Displayng profile on the main page, Runs only after page is loaded.
 async function getProfile() {
     return await fetch("http://localhost:3000/profile")
                 .then((response) => response.json())
@@ -153,7 +153,7 @@ document.addEventListener("DOMContentLoaded",async function(){
         let profileHTML = `
         <p class="profile-paragraph">${pro.description}</p>
         `
-        //Insert HTML, there are 4 values we can choose for insertAdjacentHTML
+        
         profilePara.insertAdjacentHTML('beforeend', profileHTML);
     })
 })

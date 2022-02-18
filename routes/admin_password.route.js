@@ -14,7 +14,7 @@ router.post('/login', async (req,resp)=>{
     let password = req.body.password;
     //Find User based on email and password, returns an array
     let user = await admin_password.find()
-    if ((email == user.email) && (password == user.password)){
+    if ((email === user[0].email) && (password === user[0].password)){
         let token = auth.generateToken(user);
         //Store Token on cookie storage
         resp.cookie('auth_token', token);
@@ -22,6 +22,8 @@ router.post('/login', async (req,resp)=>{
             redirectURL: '/admin',
             message: 'Success'
         });
+    } else{
+        resp.send({message: 'Rejected!'});
     }
 })
 

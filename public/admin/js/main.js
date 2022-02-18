@@ -20,7 +20,7 @@ async function addActivities() {
             <td><button class="edit-btn btn btn-link p-0 text-decoration-none">Edit</button></td>
             <td><button class="remove-btn btn btn-link p-0 text-decoration-none">X</button></td>
         </tr>`;
-        //Insert HTML, there are 4 values we can choose for insertAdjacentHTML
+        
         activityBlock.insertAdjacentHTML('beforeend', activityHTML);
     })
 }
@@ -50,7 +50,7 @@ async function showContact() {
             <td colspan="5" class="text">${contact.message}</td>
         </tr>
         `;
-        //Insert HTML, there are 4 values we can choose for insertAdjacentHTML
+        
         contactBlock.insertAdjacentHTML('beforeend', contactHTML);
     })
 }
@@ -78,7 +78,7 @@ async function addExperiences() {
             <td><button class="edit-btn btn btn-link p-0 text-decoration-none">Edit</button></td>
             <td><button class="remove-btn btn btn-link p-0 text-decoration-none">X</button></td>
         </tr>`;
-        //Insert HTML, there are 4 values we can choose for insertAdjacentHTML
+        
         experienceBlock.insertAdjacentHTML('beforeend', experienceHTML);
     })
 }
@@ -106,7 +106,7 @@ async function addEducation() {
             <td><button class="edit-btn btn btn-link p-0 text-decoration-none">Edit</button></td>
             <td><button class="remove-btn btn btn-link p-0 text-decoration-none">X</button></td>
         </tr>`;
-        //Insert HTML, there are 4 values we can choose for insertAdjacentHTML
+        
         educationBlock.insertAdjacentHTML('beforeend', educationHTML);
     })
 }
@@ -130,7 +130,7 @@ async function addSkills() {
             <td class="name">${skill.name}</td>
             <td><button class="remove-btn btn btn-link p-0 text-decoration-none">X</button></td>
         </tr>`;
-        //Insert HTML, there are 4 values we can choose for insertAdjacentHTML
+        
         skillBlock.insertAdjacentHTML('beforeend', skillHTML);
     })
 }
@@ -156,7 +156,7 @@ async function addProjects() {
             <td><button class="edit-btn btn btn-link p-0 text-decoration-none">Edit</button></td>
             <td><button class="remove-btn btn btn-link p-0 text-decoration-none">X</button></td>
         </tr>`;
-        //Insert HTML, there are 4 values we can choose for insertAdjacentHTML
+        
         projectBlock.insertAdjacentHTML('beforeend',projectHTML);
     })
 }
@@ -182,7 +182,7 @@ async function editProfile() {
             <td colspan="5" class="description">${profile.description}</td>
         </tr>
         `;
-        //Insert HTML, there are 4 values we can choose for insertAdjacentHTML
+        
         profileBlock.insertAdjacentHTML('beforeend',profileHTML);
     })
 }
@@ -208,7 +208,7 @@ async function editAbout() {
             <td colspan="5" class="description">${about.description}</td>
         </tr>
         `;
-        //Insert HTML, there are 4 values we can choose for insertAdjacentHTML
+        
         aboutBlock.insertAdjacentHTML('beforeend',aboutHTML);
     })
 }

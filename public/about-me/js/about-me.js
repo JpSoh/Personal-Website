@@ -1,5 +1,6 @@
 let contactRequestForm = document.querySelector('.email-request-form');
 
+//Send contact form details to server 
 contactRequestForm.addEventListener('submit', function(e){
     e.preventDefault();
     let name = document.querySelector('#name');
@@ -23,13 +24,12 @@ contactRequestForm.addEventListener('submit', function(e){
     }
 })
 
-//Displayng profile on the main page, not working with admin functions, Runs only after page is loaded.
 async function getAbout() {
     return await fetch("http://localhost:3000/about")
                 .then((response) => response.json())
                 .then((data) => data);
 }
-
+//Displayng about me details on the main page, Runs only after page is loaded.
 document.addEventListener("DOMContentLoaded",async function(){
     let abouts = await getAbout();
     let aboutPara = document.querySelector('.about-me-writing');
@@ -38,7 +38,6 @@ document.addEventListener("DOMContentLoaded",async function(){
         let aboutHTML = `
         <p class="profile-paragraph">${about.description}</p>
         `
-        //Insert HTML, there are 4 values we can choose for insertAdjacentHTML
         aboutPara.insertAdjacentHTML('beforeend', aboutHTML);
     })
 })

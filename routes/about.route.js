@@ -8,7 +8,7 @@ let router = express.Router();
 let uniqid = require('uniqid'); 
 
 
-//Adding about 
+//Adding new about-me details
 router.post('/', async (req, resp) =>{
     let reqBody = req.body;
     let newRequest = new about({
@@ -20,7 +20,7 @@ router.post('/', async (req, resp) =>{
     resp.send("Accepted!");
 });
 
-//Send latest about detaild
+//Send latest about details
 router.get('/', async (req, resp) =>{
     let abouts = await about.find().sort({ _id: -1 }).limit(1)
     resp.send(abouts);

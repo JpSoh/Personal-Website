@@ -1,4 +1,4 @@
-//Education Create
+//Connect to admin page for education
 let createEducationForm = document.querySelector('.admin-education-form');
 let educationTitle = document.querySelector('#admin-education-title');
 let educationOrganization = document.querySelector('#admin-education-organization');
@@ -20,9 +20,8 @@ function disableInput(input1, input2){
 
 //Education POST request 
 createEducationForm.addEventListener('submit',function(e){
-    //Prevent default browser action for submit
     e.preventDefault();
-    let data = new FormData(); //By using the form format, we can work with files
+    let data = new FormData(); 
     data.append('title', educationTitle.value);
     data.append('organization', educationOrganization.value);
     data.append('period', educationPeriod.value);
@@ -30,7 +29,7 @@ createEducationForm.addEventListener('submit',function(e){
     data.append('location',  educationLocation.value);
     data.append('certification_link',  educationCertificationLink.value);
     data.append('imageURL',  educationImageURL.value);
-    data.append('imageFile', educationImageFile.files[0]); //This key is an array 
+    data.append('imageFile', educationImageFile.files[0]); 
 
     fetch('http://localhost:3000/education', {
         method: 'POST',
@@ -41,7 +40,7 @@ educationImageURL.addEventListener('change', () => disableInput(educationImageUR
 educationImageFile.addEventListener('change', () =>  disableInput(educationImageFile, educationImageURL));
 
 
-//Experience Create
+//Connect to admin pages for experience
 let createExperienceForm = document.querySelector('.admin-experience-form');
 let experienceTitle = document.querySelector('#admin-experience-title');
 let experienceOrganization = document.querySelector('#admin-experience-organization');
@@ -54,9 +53,8 @@ let experienceTestimonialLink = document.querySelector('#admin-experience-testim
 
 //Experience POST request 
 createExperienceForm.addEventListener('submit',function(e){
-    //Prevent default browser action for submit
     e.preventDefault();
-    let data = new FormData(); //By using the form format, we can work with files
+    let data = new FormData(); 
     data.append('title', experienceTitle.value);
     data.append('organization', experienceOrganization.value);
     data.append('period', experiencePeriod.value);
@@ -64,7 +62,7 @@ createExperienceForm.addEventListener('submit',function(e){
     data.append('location',  experienceLocation.value);
     data.append('testimonial_link',  experienceTestimonialLink.value);
     data.append('imageURL',  experienceImageURL.value);
-    data.append('imageFile', experienceImageFile.files[0]); //This key is an array 
+    data.append('imageFile', experienceImageFile.files[0]); 
 
     fetch('http://localhost:3000/experience', {
         method: 'POST',
@@ -75,15 +73,13 @@ experienceImageURL.addEventListener('change', () => disableInput(experienceImage
 experienceImageFile.addEventListener('change', () =>  disableInput(experienceImageFile, experienceImageURL));
 
 
-
-//Skills Create
+//Connect to admin pages for skills
 let createSkillsForm = document.querySelector('.admin-skills-form');
 let SkillsName = document.querySelector('#admin-skills-name');
 //Skills POST request 
 createSkillsForm.addEventListener('submit',function(e){
-    //Prevent default browser action for submit
     e.preventDefault();
-    let data = new FormData(); //By using the form format, we can work with files
+    let data = new FormData(); 
     data.append('name', SkillsName.value);
     fetch('http://localhost:3000/skills', {
         method: 'POST',
@@ -92,17 +88,16 @@ createSkillsForm.addEventListener('submit',function(e){
 })
 
 
-//Activities Create
+//Connect to admin pages for activities
 let createactivitiesForm = document.querySelector('.admin-activities-form');
 let activitiesTitle = document.querySelector('#admin-activities-title');
 let activitiesPeriod = document.querySelector('#admin-activities-period');
 let activitiesDescription = document.querySelector('#admin-activities-description');
 let activitiesLink = document.querySelector('#admin-activities-link');
-//activities POST request 
+//Activities POST request 
 createactivitiesForm.addEventListener('submit',function(e){
-    //Prevent default browser action for submit
     e.preventDefault();
-    let data = new FormData(); //By using the form format, we can work with files
+    let data = new FormData(); 
     data.append('title', activitiesTitle.value);
     data.append('period', activitiesPeriod.value);
     data.append('description', activitiesDescription.value);
@@ -115,15 +110,13 @@ createactivitiesForm.addEventListener('submit',function(e){
 })
 
 
-//Profile Create
+//Connect to admin pages for profile
 let profileForm = document.querySelector('.admin-profile-form');
 let profileDescription = document.querySelector('#admin-profile-description');
-
 //Profile POST request 
 profileForm.addEventListener('submit',function(e){
-    //Prevent default browser action for submit
     e.preventDefault();
-    let data = new FormData(); //By using the form format, we can work with files
+    let data = new FormData(); 
     data.append('description', profileDescription.value);
     fetch('http://localhost:3000/profile', {
         method: 'POST',
@@ -131,15 +124,13 @@ profileForm.addEventListener('submit',function(e){
     }).then((response) => response.text()).then((data) => window.history.go());
 })
 
-//About Create
+//Connect to admin pages for about-me
 let aboutForm = document.querySelector('.admin-about-form');
 let aboutDescription = document.querySelector('#admin-about-description');
-
 //About POST request 
 aboutForm.addEventListener('submit',function(e){
-    //Prevent default browser action for submit
     e.preventDefault();
-    let data = new FormData(); //By using the form format, we can work with files
+    let data = new FormData(); 
     data.append('description', aboutDescription.value);
     fetch('http://localhost:3000/about', {
         method: 'POST',
@@ -148,23 +139,21 @@ aboutForm.addEventListener('submit',function(e){
 })
 
 
-//Projects Create
+//Connect to admin pages for projects
 let createProjectsForm = document.querySelector('.admin-projects-form');
 let projectsTitle = document.querySelector('#admin-projects-title');
 let projectsDescription = document.querySelector('#admin-projects-description');
 let projectsImageURL = document.querySelector('#admin-projects-imageURL');
 let projectsImageFile = document.querySelector('#admin-projects-image-file');
 let projectsGithubLink = document.querySelector('#admin-projects-github-link');
-
 //projects POST request 
 createProjectsForm.addEventListener('submit',function(e){
-    //Prevent default browser action for submit
     e.preventDefault();
-    let data = new FormData(); //By using the form format, we can work with files
+    let data = new FormData();
     data.append('title', projectsTitle.value);
     data.append('description', projectsDescription.value);
     data.append('imageURL',  projectsImageURL.value);
-    data.append('imageFile', projectsImageFile.files[0]); //This key is an array 
+    data.append('imageFile', projectsImageFile.files[0]); 
     data.append('github_link', projectsGithubLink.value);
 
     fetch('http://localhost:3000/project_official', {

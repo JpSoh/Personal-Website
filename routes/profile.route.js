@@ -25,7 +25,7 @@ router.get('/', async (req, resp) =>{
     resp.send(profiles);
 })
 
-// Get details from the database by ID to be displayed on form
+//Get details from the database by ID to be displayed on form
 router.get('/:id', async (req, resp) =>{
     let id = req.params.id;
     let profiles = await profile.findOne({id: id});

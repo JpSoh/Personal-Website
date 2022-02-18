@@ -23,7 +23,7 @@
     let educationImageFileInput = document.querySelector('#update-admin-education-image-file');
     let educationCertificationInput = document.querySelector('#update-admin-education-certification-link');
 
-    //Get current details
+    //Display information on update form
     educationBlock.addEventListener('click', async function(e){
         if(e.target.classList.contains('edit-btn')){
             edu_id = e.target.parentNode.parentNode.querySelector('.id').value; 
@@ -45,7 +45,7 @@
     updateEducationForm.addEventListener('submit', async function(e){
         e.preventDefault();
 
-        let data = new FormData(); //By using the form format, we can work with files
+        let data = new FormData(); 
         data.append('title', educationTitleInput.value);
         data.append('organization', educationOrganizationInput.value);
         data.append('period', educationPeriodInput.value);
@@ -81,7 +81,7 @@
     let experienceImageFileInput = document.querySelector('#update-admin-experience-image-file');
     let experienceTestimonialInput = document.querySelector('#update-admin-experience-testimonial-link');
 
-    //Get current details
+    //Display information on update form
     experienceBlock.addEventListener('click', async function(e){
         if(e.target.classList.contains('edit-btn')){
             exp_id = e.target.parentNode.parentNode.querySelector('.id').value; 
@@ -103,7 +103,7 @@
     updateexperienceForm.addEventListener('submit', async function(e){
         e.preventDefault();
 
-        let data = new FormData(); //By using the form format, we can work with files
+        let data = new FormData(); 
         data.append('title', experienceTitleInput.value);
         data.append('organization', experienceOrganizationInput.value);
         data.append('period', experiencePeriodInput.value);
@@ -132,7 +132,7 @@
     let activitiesDescriptionInput = document.querySelector('#update-admin-activities-description');
     let activitiesLinkInput = document.querySelector('#update-admin-activities-link');
 
-    //Get current details
+    //Display information on update form
     activitiesBlock.addEventListener('click', async function(e){
         if(e.target.classList.contains('edit-btn')){
             acv_id = e.target.parentNode.parentNode.querySelector('.id').value; 
@@ -152,7 +152,7 @@
     updateActivitiesForm.addEventListener('submit', async function(e){
         e.preventDefault();
 
-        let data = new FormData(); //By using the form format, we can work with files
+        let data = new FormData(); 
         data.append('title', activitiesTitleInput.value);
         data.append('period', activitiesPeriodInput.value);
         data.append('description', activitiesDescriptionInput.value);
@@ -176,7 +176,7 @@
     let projectsDescriptionInput = document.querySelector('#update-admin-projects-description');
     let projectsLinkInput = document.querySelector('#update-admin-projects-github-link');
 
-    //Get current details
+    //Display information on update form
     projectsBlock.addEventListener('click', async function(e){
         if(e.target.classList.contains('edit-btn')){
             pro_id = e.target.parentNode.parentNode.querySelector('.id').value; 

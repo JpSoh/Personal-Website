@@ -56,3 +56,6 @@ app.use('/admin_password', adminRouter)
 app.listen(3000, ()=>{
     console.log("Listening 3000");
 })
+app.get('/admin', (req,resp) => {
+    resp.render('admin');
+})

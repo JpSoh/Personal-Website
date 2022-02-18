@@ -4,7 +4,26 @@ let admin_password = require('../models/admin_password.model').adminPassword;
 let express = require('express');
 //Redirect request from one file to another
 let router = express.Router();
+//Import token functions
+let auth = require('../controllers/auth');
 
+
+//Sign In Tab
+router.post('/login', async (req,resp)=>{
+    let email = req.body.email;
+    let password = req.body.password;
+    //Find User based on email and password, returns an array
+    let user = await admin_password.find()
+    if ((email = user.email) && (password = user.password)){
+        let token = auth.generateToken(user);
+        //Store Token on cookie storage
+        resp.cookie('auth_token', token);
+        resp.send({
+            redirectURL: '/admin',
+            message: 'Success'
+        });
+    }
+})
 
 
 //Connect router to app.js file

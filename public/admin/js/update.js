@@ -27,7 +27,7 @@
     educationBlock.addEventListener('click', async function(e){
         if(e.target.classList.contains('edit-btn')){
             edu_id = e.target.parentNode.parentNode.querySelector('.id').value; 
-            let educationPostInfo = await fetch('http://localhost:3000/education/'+edu_id)
+            let educationPostInfo = await fetch('/education/'+edu_id)
                 .then((response) => response.json())
                 .then((data) => data)
 
@@ -53,7 +53,7 @@
         data.append('location', educationLocationInput.value);
         data.append('certification_link',  educationCertificationInput.value);
 
-        await fetch('http://localhost:3000/education/'+edu_id, {
+        await fetch('/education/'+edu_id, {
             method: 'PUT',
             body: data
         }).then((response) => response.text()).then((data) => window.history.go())
@@ -85,7 +85,7 @@
     experienceBlock.addEventListener('click', async function(e){
         if(e.target.classList.contains('edit-btn')){
             exp_id = e.target.parentNode.parentNode.querySelector('.id').value; 
-            let experiencePostInfo = await fetch('http://localhost:3000/experience/'+exp_id)
+            let experiencePostInfo = await fetch('/experience/'+exp_id)
                 .then((response) => response.json())
                 .then((data) => data)
 
@@ -111,7 +111,7 @@
         data.append('location', experienceLocationInput.value);
         data.append('testimonial_link',  experienceTestimonialInput.value);
 
-        await fetch('http://localhost:3000/experience/'+exp_id, {
+        await fetch('/experience/'+exp_id, {
             method: 'PUT',
             body: data
         }).then((response) => response.text()).then((data) => window.history.go())
@@ -136,7 +136,7 @@
     activitiesBlock.addEventListener('click', async function(e){
         if(e.target.classList.contains('edit-btn')){
             acv_id = e.target.parentNode.parentNode.querySelector('.id').value; 
-            let activitiesPostInfo = await fetch('http://localhost:3000/activities/'+acv_id)
+            let activitiesPostInfo = await fetch('/activities/'+acv_id)
                 .then((response) => response.json())
                 .then((data) => data)
 
@@ -158,7 +158,7 @@
         data.append('description', activitiesDescriptionInput.value);
         data.append('link', activitiesLinkInput.value);
 
-        await fetch('http://localhost:3000/activities/'+acv_id, {
+        await fetch('/activities/'+acv_id, {
             method: 'PUT',
             body: data
         }).then((response) => response.text()).then((data) => window.history.go())
@@ -180,7 +180,7 @@
     projectsBlock.addEventListener('click', async function(e){
         if(e.target.classList.contains('edit-btn')){
             pro_id = e.target.parentNode.parentNode.querySelector('.id').value; 
-            let projectsPostInfo = await fetch('http://localhost:3000/project_official/'+pro_id)
+            let projectsPostInfo = await fetch('/project_official/'+pro_id)
                 .then((response) => response.json())
                 .then((data) => data)
 
@@ -201,7 +201,7 @@
         data.append('github_link', projectsLinkInput.value);
         data.append('date', new Date()); //Updated date
 
-        await fetch('http://localhost:3000/project_official/'+pro_id, {
+        await fetch('/project_official/'+pro_id, {
             method: 'PUT',
             body: data
         }).then((response) => response.text()).then((data) => window.history.go())

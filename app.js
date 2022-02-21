@@ -55,8 +55,10 @@ app.use('/profile',profileRouter);
 app.use('/about',aboutRouter);
 app.use('/admin_password', adminRouter)
 
-app.listen(3000, ()=>{
-    console.log("Listening 3000");
+//Deployment on remote server
+let port = process.env.PORT || 3000;
+app.listen(port, ()=>{
+    console.log(`Listening ${port}`);
 })
 
 //Open admin page if there is a token and the token matches the server to see whether we logged in already

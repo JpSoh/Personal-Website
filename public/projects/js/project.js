@@ -6,7 +6,7 @@ contactRequestForm.addEventListener('submit', function(e){
     let email = document.querySelector('#email')
     let message = document.querySelector('#message')
     if(name.value && email.value && message.value){
-        fetch('http://localhost:3000/contact_me', {
+        fetch('/contact_me', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -26,7 +26,7 @@ contactRequestForm.addEventListener('submit', function(e){
 
 //Displayng Projects on the project page, not working with admin functions, Runs only after page is loaded.
 async function getProjects() {
-    return await fetch("http://localhost:3000/project_official")
+    return await fetch("/project_official")
                 .then((response) => response.json())
                 .then((data) => data);
 }

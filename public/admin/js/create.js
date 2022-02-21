@@ -31,7 +31,7 @@ createEducationForm.addEventListener('submit',function(e){
     data.append('imageURL',  educationImageURL.value);
     data.append('imageFile', educationImageFile.files[0]); 
 
-    fetch('http://localhost:3000/education', {
+    fetch('/education', {
         method: 'POST',
         body: data
     }).then((response) => response.text()).then((data) => window.history.go());
@@ -64,7 +64,7 @@ createExperienceForm.addEventListener('submit',function(e){
     data.append('imageURL',  experienceImageURL.value);
     data.append('imageFile', experienceImageFile.files[0]); 
 
-    fetch('http://localhost:3000/experience', {
+    fetch('/experience', {
         method: 'POST',
         body: data
     }).then((response) => response.text()).then((data) => window.history.go());
@@ -81,7 +81,7 @@ createSkillsForm.addEventListener('submit',function(e){
     e.preventDefault();
     let data = new FormData(); 
     data.append('name', SkillsName.value);
-    fetch('http://localhost:3000/skills', {
+    fetch('/skills', {
         method: 'POST',
         body: data
     }).then((response) => response.text()).then((data) => window.history.go());
@@ -103,7 +103,7 @@ createactivitiesForm.addEventListener('submit',function(e){
     data.append('description', activitiesDescription.value);
     data.append('link', activitiesLink.value);
 
-    fetch('http://localhost:3000/activities', {
+    fetch('/activities', {
         method: 'POST',
         body: data
     }).then((response) => response.text()).then((data) => window.history.go());
@@ -118,7 +118,7 @@ profileForm.addEventListener('submit',function(e){
     e.preventDefault();
     let data = new FormData(); 
     data.append('description', profileDescription.value);
-    fetch('http://localhost:3000/profile', {
+    fetch('/profile', {
         method: 'POST',
         body: data
     }).then((response) => response.text()).then((data) => window.history.go());
@@ -132,7 +132,7 @@ aboutForm.addEventListener('submit',function(e){
     e.preventDefault();
     let data = new FormData(); 
     data.append('description', aboutDescription.value);
-    fetch('http://localhost:3000/about', {
+    fetch('/about', {
         method: 'POST',
         body: data
     }).then((response) => response.text()).then((data) => window.history.go());
@@ -156,7 +156,7 @@ createProjectsForm.addEventListener('submit',function(e){
     data.append('imageFile', projectsImageFile.files[0]); 
     data.append('github_link', projectsGithubLink.value);
 
-    fetch('http://localhost:3000/project_official', {
+    fetch('/project_official', {
         method: 'POST',
         body: data
     }).then((response) => response.text()).then((data) => window.history.go());

@@ -7,7 +7,7 @@
           //Jump 2 levels from remove btn to td to tr
           let id = e.target.parentNode.parentNode.querySelector('.id').value; 
           //Connect to server
-          fetch('http://localhost:3000/contact_me/' +id, {
+          fetch('/contact_me/' +id, {
               method: 'DELETE'
           }).then((response) => response.text())
           .then(() => window.history.go())
@@ -23,7 +23,7 @@
          //Jump 2 levels from remove btn to td to tr
          let id = e.target.parentNode.parentNode.querySelector('.id').value; 
          //Connect to server
-         fetch('http://localhost:3000/activities/' +id, {
+         fetch('/activities/' +id, {
              method: 'DELETE'
          }).then((response) => response.text())
          .then(() => window.history.go())
@@ -38,7 +38,7 @@
          //Jump 2 levels from remove btn to td to tr
          let id = e.target.parentNode.parentNode.querySelector('.id').value; 
          //Connect to server
-         fetch('http://localhost:3000/education/' +id, {
+         fetch('/education/' +id, {
              method: 'DELETE'
          }).then((response) => response.text())
          .then(() => window.history.go())
@@ -53,7 +53,7 @@
          //Jump 2 levels from remove btn to td to tr
          let id = e.target.parentNode.parentNode.querySelector('.id').value; 
          //Connect to server
-         fetch('http://localhost:3000/experience/' +id, {
+         fetch('/experience/' +id, {
              method: 'DELETE'
          }).then((response) => response.text())
          .then(() => window.history.go())
@@ -69,7 +69,7 @@
          //Jump 2 levels from remove btn to td to tr
          let id = e.target.parentNode.parentNode.querySelector('.id').value; 
          //Connect to server
-         fetch('http://localhost:3000/project_official/' +id, {
+         fetch('/project_official/' +id, {
              method: 'DELETE'
          }).then((response) => response.text())
          .then(() => window.history.go())
@@ -84,7 +84,7 @@
          //Jump 2 levels from remove btn to td to tr
          let id = e.target.parentNode.parentNode.querySelector('.id').value; 
          //Connect to server
-         fetch('http://localhost:3000/skills/' +id, {
+         fetch('/skills/' +id, {
              method: 'DELETE'
          }).then((response) => response.text())
          .then(() => window.history.go())

@@ -7,7 +7,7 @@ contactRequestForm.addEventListener('submit', function(e){
     let email = document.querySelector('#email')
     let message = document.querySelector('#message')
     if(name.value && email.value && message.value){
-        fetch('http://localhost:3000/contact_me', {
+        fetch('/contact_me', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -27,7 +27,7 @@ contactRequestForm.addEventListener('submit', function(e){
 
 //Displayng activties on the main page, Runs only after page is loaded.
 async function getActivities() {
-    return await fetch("http://localhost:3000/activities")
+    return await fetch("/activities")
                 .then((response) => response.json())
                 .then((data) => data);
 }
@@ -55,7 +55,7 @@ document.addEventListener("DOMContentLoaded",async function(){
 
 //Displayng experience on the main page, Runs only after page is loaded.
 async function getExperiences() {
-    return await fetch("http://localhost:3000/experience")
+    return await fetch("/experience")
                 .then((response) => response.json())
                 .then((data) => data);
 }
@@ -88,7 +88,7 @@ document.addEventListener("DOMContentLoaded",async function(){
 
 //Displayng education on the main page, Runs only after page is loaded.
 async function getEducation() {
-    return await fetch("http://localhost:3000/education")
+    return await fetch("/education")
                 .then((response) => response.json())
                 .then((data) => data);
 }
@@ -120,7 +120,7 @@ document.addEventListener("DOMContentLoaded",async function(){
 
 //Displayng skills on the main page, Runs only after page is loaded.
 async function getSkills() {
-    return await fetch("http://localhost:3000/skills")
+    return await fetch("/skills")
                 .then((response) => response.json())
                 .then((data) => data);
 }
@@ -140,7 +140,7 @@ document.addEventListener("DOMContentLoaded",async function(){
 
 //Displayng profile on the main page, Runs only after page is loaded.
 async function getProfile() {
-    return await fetch("http://localhost:3000/profile")
+    return await fetch("/profile")
                 .then((response) => response.json())
                 .then((data) => data);
 }

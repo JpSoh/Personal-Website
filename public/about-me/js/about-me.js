@@ -7,7 +7,7 @@ contactRequestForm.addEventListener('submit', function(e){
     let email = document.querySelector('#email')
     let message = document.querySelector('#message')
     if(name.value && email.value && message.value){
-        fetch('http://localhost:3000/contact_me', {
+        fetch('/contact_me', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -25,7 +25,7 @@ contactRequestForm.addEventListener('submit', function(e){
 })
 
 async function getAbout() {
-    return await fetch("http://localhost:3000/about")
+    return await fetch("/about")
                 .then((response) => response.json())
                 .then((data) => data);
 }

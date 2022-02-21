@@ -5,7 +5,7 @@ signInForm.addEventListener('submit', function(e){
     e.preventDefault();
     let email = document.querySelector('#sign-in-email').value;
     let password = document.querySelector('#sign-in-password').value;
-    fetch('http://localhost:3000/admin_password/login',{
+    fetch('/admin_password/login',{
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'

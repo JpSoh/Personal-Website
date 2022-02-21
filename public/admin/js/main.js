@@ -1,5 +1,5 @@
 async function getActivities() {
-    return await fetch("http://localhost:3000/activities")
+    return await fetch("/activities")
                 .then((response) => response.json())
                 .then((data) => data);
 }
@@ -26,7 +26,7 @@ async function addActivities() {
 }
 
 async function getContact() {
-    return await fetch("http://localhost:3000/contact_me")
+    return await fetch("/contact_me")
                 .then((response) => response.json())
                 .then((data) => data);
 }
@@ -56,7 +56,7 @@ async function showContact() {
 }
 
 async function getExperiences() {
-    return await fetch("http://localhost:3000/experience")
+    return await fetch("/experience")
                 .then((response) => response.json())
                 .then((data) => data);
 }
@@ -84,7 +84,7 @@ async function addExperiences() {
 }
 
 async function getEducation() {
-    return await fetch("http://localhost:3000/education")
+    return await fetch("/education")
                 .then((response) => response.json())
                 .then((data) => data);
 }
@@ -112,7 +112,7 @@ async function addEducation() {
 }
 
 async function getSkills() {
-    return await fetch("http://localhost:3000/skills")
+    return await fetch("/skills")
                 .then((response) => response.json())
                 .then((data) => data);
 }
@@ -136,7 +136,7 @@ async function addSkills() {
 }
 
 async function getProjects() {
-    return await fetch("http://localhost:3000/project_official")
+    return await fetch("/project_official")
                 .then((response) => response.json())
                 .then((data) => data);
 }
@@ -162,7 +162,7 @@ async function addProjects() {
 }
 
 async function getProfile() {
-    return await fetch("http://localhost:3000/profile")
+    return await fetch("/profile")
                 .then((response) => response.json())
                 .then((data) => data);
 }
@@ -188,7 +188,7 @@ async function editProfile() {
 }
 
 async function getAbout() {
-    return await fetch("http://localhost:3000/about")
+    return await fetch("/about")
                 .then((response) => response.json())
                 .then((data) => data);
 }

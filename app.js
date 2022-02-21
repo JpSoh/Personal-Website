@@ -12,7 +12,7 @@ let cookieParser = require('cookie-parser');
 //Generate cookie for every requests
 app.use(cookieParser());
 //Connect to Database
-mongoose.connect('mongodb://localhost/personal-website').then(() => {
+mongoose.connect('mongodb+srv://jp71:266746@projects.ejscg.mongodb.net/personal-website').then(() => {
     console.log("Connected to MongoDB");
 }).catch((error) => {
     console.log("Something is wrong");

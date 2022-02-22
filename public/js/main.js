@@ -43,7 +43,7 @@ document.addEventListener("DOMContentLoaded",async function(){
                 <h5 class="card-title">${activity.title}</h5>
                 <p class="activity-date fw-light fst-italic">${activity.period}</p>
                 <p class="card-text">${activity.description}.</p>
-                <a href="${activity.link}" class="text-decoration-underline">See Certifications</a>
+                <a href="${activity.link}" class="text-decoration-underline" target="_blank" >See Certifications</a>
             </div>
         </div>`
         
@@ -76,7 +76,7 @@ document.addEventListener("DOMContentLoaded",async function(){
                 <p class="experience-period fw-light fst-italic m-0">${experience.period}</p>
                 <p class="experience-location fw-light fst-italic">${experience.location}e</p>
                 <p class="experience-description">${experience.description}</p>
-                <a href="${experience.testimonial_link}" class="text-decoration-underline">See Testimonials</a>
+                <a href="${experience.testimonial_link}" class="text-decoration-underline" target="_blank">See Testimonials</a>
             </div>
          </div>
         `
@@ -109,7 +109,7 @@ document.addEventListener("DOMContentLoaded",async function(){
                 <p class="education-period fw-light fst-italic m-0">${education.period}</p>
                 <p class="education-location fw-light fst-italic">${education.location}</p>
                 <p class="education-description">${education.description}</p>
-                <a href="${education.certification_link}" class="text-decoration-underline">See Certifications</a>
+                <a href="${education.certification_link}" class="text-decoration-underline" target="_blank">See Certifications</a>
             </div>
       </div>
         `

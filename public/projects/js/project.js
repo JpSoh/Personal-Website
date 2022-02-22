@@ -50,7 +50,7 @@ document.addEventListener("DOMContentLoaded",async function(){
                         <div class="card-body">
                             <h5 class="card-title">${project.title}</h5>
                             <p class="card-text">${project.description}</p>
-                            <a href="${project.github_link}" class="btn btn-primary mb-5">Further Details</a>
+                            <a href="${project.github_link}" class="btn btn-primary mb-5" target="_blank">Further Details</a>
                             <p class="card-text"><small class="text-muted">Updated on ${project.date.substr(0, 10)}</small></p>
                         </div>
                     </div>

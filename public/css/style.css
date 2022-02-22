@@ -1,6 +1,10 @@
 .embed-responsive .card-img-top {
     object-fit: cover;
 }
+.itineraries p {
+	text-align: center;
+}
+  
 .margin-adjustment-1{
     margin-top: 4rem;
 }

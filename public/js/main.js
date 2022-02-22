@@ -131,7 +131,7 @@ document.addEventListener("DOMContentLoaded",async function(){
     skillList.innerHTML = '';
     skills.forEach((skill) => {
         let skillHTML = `
-        <div class="p-3 me-2 mb-2 bg-secondary bg-gradient text-white col-md-3 col-xs-6">${skill.name}</div>
+        <div class="p-3 me-2 mb-2 bg-secondary bg-gradient text-white col-md-3 col-xs-6 rounded">${skill.name}</div>
         `
         
         skillList.insertAdjacentHTML('beforeend', skillHTML);

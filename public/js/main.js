@@ -76,7 +76,7 @@ document.addEventListener("DOMContentLoaded",async function(){
                 <p class="experience-period fw-light fst-italic m-0">${experience.period}</p>
                 <p class="experience-location fw-light fst-italic">${experience.location}e</p>
                 <p class="experience-description">${experience.description}</p>
-                <a href="${experience.testimonial_link}" class="text-decoration-underline" target="_blank">See Testimonials</a>
+                <a href="${experience.testimonial_link}" class="text-decoration-underline me-1" target="_blank">See Testimonials</a>
             </div>
          </div>
         `

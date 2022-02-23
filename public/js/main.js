@@ -42,7 +42,7 @@ document.addEventListener("DOMContentLoaded",async function(){
             <div class="card-body">
                 <h5 class="card-title">${activity.title}</h5>
                 <p class="activity-date fw-light fst-italic">${activity.period}</p>
-                <p class="card-text">${activity.description}.</p>
+                <p class="card-text">${activity.description}</p>
                 <a href="${activity.link}" class="text-decoration-underline" target="_blank" >See Certifications</a>
             </div>
         </div>`
